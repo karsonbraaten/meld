@@ -24,6 +24,12 @@
       ],
       "@meld/scaffold/*": [
         "dist/scaffold/*"
+      ],
+      "@meld/app-bar": [
+        "dist/app-bar"
+      ],
+      "@meld/app-bar/*": [
+        "dist/app-bar/*"
       ]
     }
   }
