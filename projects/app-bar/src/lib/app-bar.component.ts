@@ -5,7 +5,8 @@ import {
   Output,
   EventEmitter,
   OnDestroy,
-  ViewChild
+  ViewChild,
+  ChangeDetectionStrategy
 } from '@angular/core'
 import { ThemePalette } from '@angular/material'
 import { Observable, Subscription } from 'rxjs'
@@ -18,7 +19,8 @@ import { Search, NavigationAction } from './model'
 @Component({
   selector: 'mel-app-bar',
   templateUrl: './app-bar.component.html',
-  styleUrls: ['./app-bar.component.css']
+  styleUrls: ['./app-bar.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppBarComponent implements OnInit, OnDestroy {
   @Input() color: ThemePalette = undefined

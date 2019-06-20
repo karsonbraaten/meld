@@ -8,7 +8,8 @@ import {
   AfterViewInit,
   ViewChild,
   Output,
-  EventEmitter
+  EventEmitter,
+  ChangeDetectionStrategy
 } from '@angular/core'
 import { CdkPortal, DomPortalHost, PortalHost } from '@angular/cdk/portal'
 import { Subscription } from 'rxjs'
@@ -19,7 +20,8 @@ import { Search, AppBarState, NavigationAction } from '../model'
 @Component({
   selector: 'app-bar-content',
   templateUrl: './app-bar-content.component.html',
-  styleUrls: ['./app-bar-content.component.css']
+  styleUrls: ['./app-bar-content.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppBarContentComponent implements OnInit, AfterViewInit {
   @Input() bottom: boolean = false
@@ -43,6 +45,10 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   ngOnInit() {
     if (this.search) {
       this.appBar.setSearch(this.search)
+    }
+
+    if (this.state !== 'search') {
+      this.appBar.collapseSearch()
     }
 
     this.subscription = this.appBar.searchTerm$.subscribe(term =>
