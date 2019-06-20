@@ -19,6 +19,9 @@
       "dom"
     ],
     "paths": {
+      "@entities/*": [
+        "src/entities/*"
+      ],
       "@meld/scaffold": [
         "dist/scaffold"
       ],
