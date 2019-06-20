@@ -1,0 +1,17 @@
+.flexible-space {
+  flex: 1 1 auto;
+}
+
+.navigation-icon {
+  margin-right: 16px;
+}
+
+.contextual-action-bar {
+  background-color: #212121;
+  color: white !important;
+}
+
+.bottom-row {
+  padding: 0;
+  height: 48px;
+}

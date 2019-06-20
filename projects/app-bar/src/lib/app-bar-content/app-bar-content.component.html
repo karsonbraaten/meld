@@ -1,0 +1,24 @@
+<ng-template cdk-portal>
+  <mat-toolbar-row *ngIf="state === 'regular'">
+    <button mat-icon-button (click)="onNavigate('menu')" class="navigation-icon">
+      <mat-icon>{{ navigationIcon }}</mat-icon>
+    </button>
+    <ng-content select="[appBarTitle]"></ng-content>
+    <span class="flexible-space"></span>
+    <button *ngIf="searchIcon" mat-icon-button (click)="onSearch()">
+      <mat-icon>search</mat-icon>
+    </button>
+    <ng-content select="[appBarActions]"></ng-content>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="state === 'contextual'" class="contextual-action-bar">
+    <button mat-icon-button (click)="onNavigate('close')" class="navigation-icon">
+      <mat-icon>close</mat-icon>
+    </button>
+    <ng-content select="[contextualTitle]"></ng-content>
+    <span class="flexible-space"></span>
+    <ng-content select="[contextualActions]"></ng-content>
+  </mat-toolbar-row>
+  <mat-toolbar-row *ngIf="bottom" class="bottom-row">
+    <ng-content select="[bottom]"></ng-content>
+  </mat-toolbar-row>
+</ng-template>

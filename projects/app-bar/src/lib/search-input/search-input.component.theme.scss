@@ -1,0 +1,12 @@
+@import '~@angular/material/theming';
+
+@mixin search-input-theme($theme) {
+  $dark: map-get($theme, is-dark);
+  input {
+    @if ($dark == true) {
+      color: white;
+    } @else {
+      color: black;
+    }
+  }
+}

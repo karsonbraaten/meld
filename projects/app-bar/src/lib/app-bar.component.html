@@ -1,0 +1,16 @@
+<mat-toolbar id="app-bar-content" [color]="color" class="mat-elevation-z6">
+    <mat-toolbar-row style="display: none;"></mat-toolbar-row>
+    <ng-container *ngIf="search$ | async as search">
+        <mat-toolbar-row *ngIf="search.expanded">
+            <button mat-icon-button class="navigation-icon" (click)="onClose($event)">
+                <mat-icon>arrow_back</mat-icon>
+            </button>
+            <search-input
+                #searchInput
+                [placeholder]="search.placeholder"
+                [value]="search.term"
+                (search)="onSearch($event)">
+            </search-input>
+        </mat-toolbar-row>
+    </ng-container>
+</mat-toolbar>

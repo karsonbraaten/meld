@@ -1,0 +1,17 @@
+:host {
+  display: flex;
+}
+
+input {
+  flex: 1 1 auto;
+  border: none;
+  font-weight: 400;
+  font-family: Roboto, 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  background-color: transparent;
+  width: 100%;
+}
+
+input:focus {
+  outline: none;
+}

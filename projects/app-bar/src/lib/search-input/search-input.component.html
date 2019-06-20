@@ -1,0 +1,10 @@
+<input
+  #input
+  [placeholder]="placeholder"
+  [value]="value"
+  (input)="onInput($event.target.value)"
+  firstResponder
+  autofocus
+  role="searchbox"
+/>
+<button *ngIf="value" mat-icon-button (click)="onClear(input)"><mat-icon>cancel</mat-icon></button>
