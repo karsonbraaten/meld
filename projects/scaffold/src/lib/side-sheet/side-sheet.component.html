@@ -1,3 +1,11 @@
-<p>
-  side-sheet works!
-</p>
+<ng-template cdk-portal>
+  <div style="margin: 0 16px;">
+    <div class="sheet-header">
+      <h3>{{ titleText }}</h3>
+      <button mat-icon-button (click)="onClose()">
+        <mat-icon>close</mat-icon>
+      </button>
+    </div>
+    <ng-content></ng-content>
+  </div>
+</ng-template>
