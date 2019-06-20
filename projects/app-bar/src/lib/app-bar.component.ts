@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core'
 
 @Component({
-  selector: 'lib-app-bar',
+  selector: 'mel-app-bar',
   template: `
     <p>
       app-bar works!
