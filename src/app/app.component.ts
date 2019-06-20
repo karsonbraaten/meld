@@ -1,4 +1,5 @@
 import { Component } from '@angular/core'
+import { NavigationAction } from '@meld/app-bar'
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core'
 })
 export class AppComponent {
   title = 'meld'
+
+  onNavigate(action: NavigationAction) {
+    console.log(action)
+  }
 }

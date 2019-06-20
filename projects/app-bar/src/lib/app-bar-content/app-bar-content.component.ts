@@ -27,6 +27,7 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   @Input() searchIcon: boolean = false
   @Input() state: AppBarState = 'regular'
 
+  @Output() searchExpand = new EventEmitter()
   @Output() searchTerm = new EventEmitter<string>()
 
   @ViewChild(CdkPortal, { static: false }) portal: CdkPortal
@@ -69,6 +70,7 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   }
 
   onSearch() {
+    this.searchExpand.emit()
     this.appBar.expandSearch()
   }
 

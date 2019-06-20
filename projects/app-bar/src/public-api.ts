@@ -4,3 +4,4 @@
 
 export * from './lib/app-bar.component'
 export * from './lib/app-bar.module'
+export * from './lib/model'

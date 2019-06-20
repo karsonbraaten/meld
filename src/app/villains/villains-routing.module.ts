@@ -8,6 +8,13 @@ const routes: Routes = [
     path: '',
     pathMatch: 'full',
     component: VillainsComponent
+  },
+  {
+    path: 'search',
+    loadChildren: () =>
+      import('./villains-search/villains-search.module').then(
+        m => m.VillainsSearchModule
+      )
   }
 ]
 
