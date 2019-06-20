@@ -1,3 +1,42 @@
-<p>
-    scaffold works
-</p>
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #drawer
+      fixedInViewport="true"
+      [attr.role]="(drawerOpen$ | async) ? 'navigation' : 'dialog'"
+      [mode]="(drawerOpen$ | async) ? 'side' : 'over'"
+      [opened]="drawerOpen$ | async"
+      [style.width]="'256px'"
+    >
+      <ng-content select="[drawer]"></ng-content>
+    </mat-sidenav>
+    <mat-sidenav
+      #modalSideSheet
+      fixedInViewport="true"
+      [mode]="'over'"
+      [style.width]="'300px'"
+      mode="side"
+      position="end"
+    >
+      <div id="modal-side-sheet"></div>
+    </mat-sidenav>
+    <mat-sidenav-content class="shell-content-container" role="main">
+      <div class="top-nav">
+        <ng-content select="[topNav]"></ng-content>
+      </div>
+      <div class="shell-content">
+        <mat-sidenav-container>
+          <mat-sidenav
+            #standardSideSheet
+            mode="side"
+            position="end"
+            [opened]="gtxs$ | async"
+            [style.width]="'320px'"
+            style="background: transparent;"
+          >
+            <div id="standard-side-sheet"></div>
+          </mat-sidenav>
+          <ng-content></ng-content>
+        </mat-sidenav-container>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
