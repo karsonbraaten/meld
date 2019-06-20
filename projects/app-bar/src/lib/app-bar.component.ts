@@ -23,6 +23,7 @@ import { Search, NavigationAction } from './model'
 export class AppBarComponent implements OnInit, OnDestroy {
   @Input() color: ThemePalette = undefined
 
+  @Output() filter = new EventEmitter()
   @Output() navigate = new EventEmitter<NavigationAction>()
 
   @ViewChild('search', { static: false }) set search(
@@ -36,17 +37,21 @@ export class AppBarComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.search$ = this.appBar.search$
-    this.subscription = this.appBar.navigate$.subscribe(action =>
+
+    this.filterSub = this.appBar.filter$.subscribe(_ => this.filter.emit())
+
+    this.navigateSub = this.appBar.navigate$.subscribe(action =>
       this.navigate.emit(action)
     )
   }
 
   ngOnDestroy() {
-    this.subscription.unsubscribe()
+    this.navigateSub.unsubscribe()
   }
 
   onClose(event: Event) {
     event.stopPropagation()
+    this.appBar.navigate('back')
   }
 
   onSearch(term: string) {
@@ -54,5 +59,6 @@ export class AppBarComponent implements OnInit, OnDestroy {
   }
 
   search$: Observable<Search>
-  private subscription: Subscription
+  private filterSub: Subscription
+  private navigateSub: Subscription
 }

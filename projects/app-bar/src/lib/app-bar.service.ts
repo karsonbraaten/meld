@@ -20,6 +20,10 @@ export class AppBarService {
     this._search$.next({ ...this._search$.value, expanded: true })
   }
 
+  filter() {
+    this._filter$.next()
+  }
+
   navigate(action: NavigationAction) {
     this._navigate$.next(action)
   }
@@ -30,6 +34,10 @@ export class AppBarService {
 
   setSearch(search: Search) {
     this._search$.next(search)
+  }
+
+  get filter$(): Observable<void> {
+    return this._filter$.asObservable()
   }
 
   get navigate$(): Observable<NavigationAction> {
@@ -47,6 +55,7 @@ export class AppBarService {
     )
   }
 
+  private _filter$ = new Subject<void>()
   private _navigate$ = new Subject<NavigationAction>()
   private _search$ = new BehaviorSubject<Search>(emptySearch)
 }

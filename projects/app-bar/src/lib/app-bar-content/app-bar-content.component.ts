@@ -23,6 +23,7 @@ import { Search, AppBarState, NavigationAction } from '../model'
 })
 export class AppBarContentComponent implements OnInit, AfterViewInit {
   @Input() bottom: boolean = false
+  @Input() filterIcon: boolean = false
   @Input() search: Search | null
   @Input() searchIcon: boolean = false
   @Input() state: AppBarState = 'regular'
@@ -72,6 +73,10 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   onSearch() {
     this.searchExpand.emit()
     this.appBar.expandSearch()
+  }
+
+  onFilter() {
+    this.appBar.filter()
   }
 
   get navigationIcon(): 'menu' | 'arrow_back' {

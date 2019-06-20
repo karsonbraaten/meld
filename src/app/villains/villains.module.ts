@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
 import { AppBarModule } from '@meld/app-bar'
+import { ScaffoldModule } from '@meld/scaffold'
 
 import { VillainListModule } from '@entities/villain'
 
@@ -13,6 +14,7 @@ import { VillainsComponent } from './villains.component'
   imports: [
     CommonModule,
     AppBarModule,
+    ScaffoldModule,
     VillainListModule,
     VillainsRoutingModule
   ]

@@ -33,19 +33,15 @@ export class ScaffoldComponent implements AfterContentInit {
       })
     )
 
-    this.sideSheetService.close$.subscribe(_ => this.closeSideSheet())
+    this.sideSheetService.close$.subscribe(_ => this.toggleSideSheet())
   }
 
-  closeSideSheet() {
+  toggleSideSheet() {
     this.isGtxs ? this.standardSideSheet.toggle() : this.modalSideSheet.toggle()
   }
 
   toggleDrawer() {
     this.drawer.toggle()
-  }
-
-  toggleRightDrawer() {
-    this.modalSideSheet.toggle()
   }
 
   drawerOpen$: Observable<boolean>

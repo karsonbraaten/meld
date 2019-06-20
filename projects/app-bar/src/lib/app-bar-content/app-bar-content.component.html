@@ -8,6 +8,9 @@
     <button *ngIf="searchIcon" mat-icon-button (click)="onSearch()">
       <mat-icon>search</mat-icon>
     </button>
+    <button *ngIf="filterIcon" mat-icon-button (click)="onFilter()">
+      <mat-icon>filter_list</mat-icon>
+    </button>
     <ng-content select="[appBarActions]"></ng-content>
   </mat-toolbar-row>
   <mat-toolbar-row *ngIf="state === 'contextual'" class="contextual-action-bar">
