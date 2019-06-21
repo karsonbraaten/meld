@@ -39,7 +39,7 @@ const villains: Villain[] = [
       'Gifted in engineering and creating gadgets from just about anything.[15]'
   },
   {
-    name: 'Doctor OctopusArch',
+    name: 'Doctor Octopus',
     alter_ego: 'Doctor Otto Gunther Octavius',
     first_appearance: '#3 (July 1963)[9]',
     creator: 'Stan Lee[16][17], Steve Ditko[16][17]',
@@ -47,7 +47,7 @@ const villains: Villain[] = [
       'Originally a scientist whose invention of metallic limbs had become fused to his body by an accident which caused his insanity. He has telepathic control of these arms and they are strong enough to physically hurt Spider-Man when Octavius controls them.[18]'
   },
   {
-    name: 'Sandman3',
+    name: 'Sandman',
     alter_ego: 'William Baker / Flint Marko',
     first_appearance: '#4 (September 1963)[19][20]',
     creator: 'Stan Lee[19][20], Steve Ditko[19][20]',
@@ -63,14 +63,14 @@ const villains: Villain[] = [
       'Dr. Curt Connors tested himself an experimental serum from reptile DNA which created him as a giant humanoid Lizard. As the Lizard he has regeneration abilities. Along with superhuman strength, speed and agility. He can also telepathically command all reptiles within a one-mile radius.[25]'
   },
   {
-    name: 'Living Brain[26]',
+    name: 'Living Brain',
     alter_ego: 'Living Brain',
     first_appearance: '#8 (January 1964)[27]',
     creator: 'Stan Lee[27], Steve Ditko[27]',
     description: 'A living robot that is designed to solve any problem.[27]'
   },
   {
-    name: 'Electro4',
+    name: 'Electro',
     alter_ego: 'Maxwell Dillon',
     first_appearance: '#9 (February 1964)[28][29]',
     creator: 'Stan Lee[30],  Steve Ditko[30]',
@@ -85,7 +85,7 @@ const villains: Villain[] = [
     description: 'A notorious crime lord of New York City.[32]'
   },
   {
-    name: 'Mysterio5',
+    name: 'Mysterio',
     alter_ego: 'Quentin Beck',
     first_appearance: '#13 (June 1964)[33][34]',
     creator: 'Stan Lee[33][35], Steve Ditko[33][35]',
@@ -93,7 +93,7 @@ const villains: Villain[] = [
       'Uses special effects that makes him a master of illusion. Also knows hypnosis. Can use combat that he learned from being a stuntman. Has knowledge of robotics and chemistry.[34]'
   },
   {
-    name: 'Green Goblin[36]Arch',
+    name: 'Green Goblin',
     alter_ego: 'Norman OsbornArch, Harry Osborn[37][38]',
     first_appearance: '#14 (July 1964)[36]',
     creator: 'Stan Lee[36][39], Steve Ditko[36][39]',
@@ -101,7 +101,7 @@ const villains: Villain[] = [
       'The first Green Goblin is Norman Osborn, the CEO of Oscorp. He has Powers that derive from a "Goblin formula" that increase agility, endurance strength and reflexes to superhuman levels. The formula has also advances the intelligence but with a side effect of insanity. Has many weapons that Norman Osborn originally created. Such as glider to fly with and pumpkin bombs to throw.[36]'
   },
   {
-    name: 'Kraven the Hunter7',
+    name: 'Kraven the Hunter',
     alter_ego:
       'Sergei Kravinoff, Alyosha Kravinoff (son), Ana Kravinoff (daughter)',
     first_appearance: '#15 (August 1964)[40]',
@@ -110,7 +110,7 @@ const villains: Villain[] = [
       "Depicted as the world's greatest big-game hunter, Kraven the Hunter is the stepbrother of Chameleon. Prefers using his bare hands instead of guns. Uses preparation along with magic jungle potion which helps with speed, strength and game tracking.[41]"
   },
   {
-    name: 'Scorpion8',
+    name: 'Scorpion',
     alter_ego: 'Mac Gargan8',
     first_appearance: '#20 (January 1965)',
     creator: 'Stan Lee[42], Steve Ditko[42]',
@@ -125,7 +125,7 @@ const villains: Villain[] = [
     description: 'A robotic expert who created the Spider-Slayers.'
   },
   {
-    name: 'Crime Master[45]',
+    name: 'Crime Master',
     alter_ego: 'Various',
     first_appearance: '#26 (July 1965)[32]',
     creator: 'Stan Lee, Steve Ditko',
@@ -133,7 +133,7 @@ const villains: Villain[] = [
       'A professional criminal who was the alias of different people.'
   },
   {
-    name: 'Molten Man[46]',
+    name: 'Molten Man',
     alter_ego: 'Mark Raxton[46]',
     first_appearance: '#28 (September 1965)[47]',
     creator: 'Stan Lee, Steve Ditko',
@@ -141,7 +141,7 @@ const villains: Villain[] = [
       'A scientist who was covered in a liquid metallic alloy that not only gives him super-strength, but also enabled him to generate heat and radiation.'
   },
   {
-    name: 'Looter[48][49]',
+    name: 'Looter',
     alter_ego: 'Norton G. Fester',
     first_appearance: '#36 (May 1966)[47]',
     creator: 'Stan Lee, Steve Ditko',
@@ -172,7 +172,7 @@ const villains: Villain[] = [
       'Wears a battle suit that contains vibro-shock gauntlets.[43][55]'
   },
   {
-    name: 'Kingpin10',
+    name: 'Kingpin',
     alter_ego: 'Wilson Fisk',
     first_appearance: '#50(July 1967) ("Spider-Man No More!")[56][57]',
     creator: 'Stan Lee[58], John Romita Sr.[58]',
@@ -187,35 +187,35 @@ const villains: Villain[] = [
     description: ''
   },
   {
-    name: 'Man Mountain Marko[62]',
+    name: 'Man Mountain Marko',
     alter_ego: 'Michael Marko',
     first_appearance: '#73 (June 1969)[32]',
     creator: 'Stan Lee, John Romita Sr.',
     description: 'A mob lieutenant with super-strength'
   },
   {
-    name: 'Silvermane[63]',
+    name: 'Silvermane',
     alter_ego: 'Silvio Manfredi',
     first_appearance: '#73 (June 1969)[64]',
     creator: 'Stan Lee, John Buscema[32]',
     description: 'An aging crime boss.'
   },
   {
-    name: 'Kangaroo[48][65]',
+    name: 'Kangaroo',
     alter_ego: 'Frank Oliver[66], Brian Hibbs',
     first_appearance: '#81 (February 1970)[32]',
     creator: 'Stan Lee, John Buscema,  Jim Mooney, John Romita, Sr.[65]',
     description: 'A name given to two kangaroo-themed villains.'
   },
   {
-    name: 'Schemer[32]',
+    name: 'Schemer',
     alter_ego: 'Richard Fisk',
     first_appearance: '#83 (April 1970)',
     creator: 'Stan Lee, John Romita Sr.',
     description: 'The son of Kingpin.'
   },
   {
-    name: 'Morbius[67][68]',
+    name: 'Morbius',
     alter_ego: 'Michael Morbius',
     first_appearance: '#101 (October 1971)11[69]',
     creator: 'Roy Thomas[69], Gil Kane[32]',
@@ -229,14 +229,14 @@ const villains: Villain[] = [
     description: ''
   },
   {
-    name: 'Gibbon[70]',
+    name: 'Gibbon',
     alter_ego: 'Martin Blank',
     first_appearance: '#110 (July 1972)[32]',
     creator: 'Stan Lee, John Romita Sr.[70]',
     description: 'A lesser criminal with gibbon-like abilities.'
   },
   {
-    name: 'Hammerhead[67][71][72]',
+    name: 'Hammerhead',
     alter_ego: 'Joseph (full name unknown)[73]',
     first_appearance: '#113 (October  1972)[74]',
     creator: 'Gerry Conway, John Romita Sr.[75]',
@@ -244,7 +244,7 @@ const villains: Villain[] = [
       'An amnesica gangster whose skull was replaced with an unbendable steel alloy.'
   },
   {
-    name: 'Man-Wolf[76]',
+    name: 'Man-Wolf',
     alter_ego: 'John Jameson',
     first_appearance: '#124 (September 1973).[32]',
     creator: 'Gerry Conway[75]',
@@ -252,7 +252,7 @@ const villains: Villain[] = [
       'When exposed to the Godstone, John Jameson transforms into the werewolf-like creature Man-Wolf.'
   },
   {
-    name: 'Jackal[77]',
+    name: 'Jackal',
     alter_ego: 'Miles Warren',
     first_appearance: '#129 (February 1974)12[77]',
     creator: 'Gerry Conway[77]10, Ross Andru[77]10',
@@ -267,14 +267,14 @@ const villains: Villain[] = [
     description: 'A name given to different tarantula-themed villains.'
   },
   {
-    name: 'Mindworm[78]',
+    name: 'Mindworm',
     alter_ego: 'William Turner',
     first_appearance: '#138 (November 1974)',
     creator: 'Gerry Conway[32], Ross Andru [32]',
     description: 'A superhuman with telepathic powers.'
   },
   {
-    name: 'Grizzly[79]',
+    name: 'Grizzly',
     alter_ego: 'Maxwell Markham',
     first_appearance: '#139 (December 1974)[80]',
     creator: 'Gerry Conway, Ross Andru',
@@ -282,7 +282,7 @@ const villains: Villain[] = [
       'An ex-professional wrestler that wears a grizzly bear-themed outfit.'
   },
   {
-    name: 'Human Fly[66]',
+    name: 'Human Fly',
     alter_ego: 'Richard Deacon',
     first_appearance: 'Annual #10[81] (1976)',
     creator: 'Len Wein, Bill Mantlo, Gil Kane',
@@ -290,21 +290,21 @@ const villains: Villain[] = [
       'A criminal that was imprinted with the genetic code of a housefly.'
   },
   {
-    name: "Will o' the Wisp[32]",
+    name: "Will o' the Wisp",
     alter_ego: 'Jackson Arvad',
     first_appearance: '#167 (April 1977)',
     creator: 'Len Wein, Ross Andru',
     description: 'A former Roxxon employee who can manipulate his molecules.'
   },
   {
-    name: 'Big Wheel[48]',
+    name: 'Big Wheel',
     alter_ego: 'Jackson Wheele[66]',
     first_appearance: '#182 (July 1978)[32]',
     creator: 'Marv Wolfman, Ross Andru, Mike Esposito',
     description: 'A criminal that rides the Big Wheel vehicle.'
   },
   {
-    name: 'Black Cat13',
+    name: 'Black Cat',
     alter_ego: 'Felicia Hardy',
     first_appearance: '#194 (July 1979)[82]',
     creator: 'Marv Wolfman, Keith Pollard[82]',
@@ -314,12 +314,12 @@ const villains: Villain[] = [
   {
     name: 'Calypso',
     alter_ego: 'Calypso Ezili',
-    first_appearance: '#209 (October 1980)[84]',
+    first_appearance: '#209 (October 1980)',
     creator: "Dennis O'Neil, Alan Weiss",
     description: 'A voodoo accomplice of Kraven the Hunter.'
   },
   {
-    name: 'Hydro-Man[1]',
+    name: 'Hydro-Man',
     alter_ego: 'Morris Bench',
     first_appearance: '#212 (January 10, 1981)[85][86]',
     creator: "Denny O'Neil, John Romita Jr.",
@@ -335,7 +335,7 @@ const villains: Villain[] = [
       "Powers similar to Green Goblin after discovering Norman's lair. Perfecting Green Goblin's strength portion, goblin glider and pumpkin bombs without the insanity that Norman had.[89][91][92]"
   },
   {
-    name: 'Rose[93][94]',
+    name: 'Rose',
     alter_ego: 'Richard Fisk',
     first_appearance: '#253 (June 1984)[84]',
     creator: 'Tom DeFalco',
@@ -350,7 +350,7 @@ const villains: Villain[] = [
     description: 'The son of Spencer Smythe.'
   },
   {
-    name: 'Slyde[66]',
+    name: 'Slyde',
     alter_ego: 'Jalome Beacher',
     first_appearance: '#272 (January 1986)[97]',
     creator: 'Tom DeFalco, Sal Buscema',
@@ -358,7 +358,7 @@ const villains: Villain[] = [
       'A chemist whose suit allow him to move at nearly 30 miles per hour (48 km/h). He is almost impossible to grasp and he is incredibly maneuverable'
   },
   {
-    name: 'VenomArch',
+    name: 'Venom',
     alter_ego: 'Eddie BrockArch, Mac Gargan',
     first_appearance: '#30015[8][98]',
     creator: 'Todd McFarlane[99]',
@@ -366,7 +366,7 @@ const villains: Villain[] = [
       "The symbiote that once merged with Spider-Man as a suit mimics and enhances the abilities of Spider-Man once bonded with Eddie.[99] Also he is undetectable to Spider-Man's spider sense.[100]"
   },
   {
-    name: 'Styx and Stone[48]',
+    name: 'Styx and Stone',
     alter_ego: 'Jacob Eishorn and Gerald Stone',
     first_appearance: '#309 (November 1988)[101]',
     creator: 'David Michelinie, Todd McFarlane',
@@ -389,7 +389,7 @@ const villains: Villain[] = [
     description: 'A tarantula-themed martial artist.'
   },
   {
-    name: 'Morlun[67][68]',
+    name: 'Morlun',
     alter_ego: 'N/',
     first_appearance: 'vol. 2 #30 (June 2001)[78]',
     creator: 'J. Michael Straczynski, John Romita Jr.',
@@ -412,7 +412,7 @@ const villains: Villain[] = [
       'A gray-resembling Green Goblin whose alias was used by different people.'
   },
   {
-    name: 'Mister Negative[68]',
+    name: 'Mister Negative',
     alter_ego: 'Martin Li',
     first_appearance: '#546 (January 2008) (full appearance)[107]',
     creator: 'Dan Slott, Phil Jimenez',
@@ -420,7 +420,7 @@ const villains: Villain[] = [
       'The leader of the Inner Demons who is able to switch between reversed and regular appearance'
   },
   {
-    name: 'Overdrive[72]',
+    name: 'Overdrive',
     alter_ego: '???',
     first_appearance: 'Swing Shift (May 2007)[108]',
     creator: 'Dan Slott, Phil Jimenez',
@@ -435,7 +435,7 @@ const villains: Villain[] = [
     description: 'The world\'s first "live streaming super-villain"'
   },
   {
-    name: 'Massacre[109][110]',
+    name: 'Massacre',
     alter_ego: 'Marcus Lyman',
     first_appearance: '#655 (April 2011)[111][112][113]',
     creator: 'Dan Slott, Marcos Martín',
