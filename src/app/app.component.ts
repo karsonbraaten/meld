@@ -28,7 +28,9 @@ export class AppComponent {
   }
 
   onShowFilter(show: boolean) {
-    show ? this.scaffold.openSideSheet() : this.scaffold.closeSideSheet()
+    show
+      ? this.scaffold.openStandardSideSheet()
+      : this.scaffold.closeSideSheet()
   }
 
   onNavigate(action: NavigationAction) {
