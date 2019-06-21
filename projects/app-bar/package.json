@@ -1,6 +1,12 @@
 {
   "name": "@meld/app-bar",
   "version": "0.1.0",
+  "description": "Angular implementation of the Material Design App bar component.",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/karsonbraaten/meld"
+  },
+  "homepage": "https://github.com/karsonbraaten/meld",
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0",
