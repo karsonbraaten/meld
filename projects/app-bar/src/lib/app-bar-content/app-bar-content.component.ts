@@ -26,9 +26,12 @@ import { Search, AppBarState, NavigationAction } from '../model'
 export class AppBarContentComponent implements OnInit, AfterViewInit {
   @Input() bottom: boolean = false
   @Input() filterIcon: boolean = false
-  @Input() search: Search | null
   @Input() searchIcon: boolean = false
+
   @Input() state: AppBarState = 'regular'
+
+  @Input() placeholder: string | null
+  @Input() term: string | null
 
   @Output() searchExpand = new EventEmitter()
   @Output() searchTerm = new EventEmitter<string>()
@@ -43,8 +46,18 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   ) {}
 
   ngOnInit() {
-    if (this.search) {
-      this.appBar.setSearch(this.search)
+    const placeholder = this.placeholder
+    if (placeholder) {
+      this.appBar.setSearch({ placeholder, expanded: true, term: '' })
+    }
+
+    const term = this.term
+    if (term) {
+      this.appBar.setSearch({
+        term,
+        expanded: true,
+        placeholder: this.placeholder || ''
+      })
     }
 
     if (this.state !== 'search') {

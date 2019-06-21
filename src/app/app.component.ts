@@ -31,7 +31,6 @@ export class AppComponent {
     switch (action) {
       case 'menu':
         this.scaffold.toggleDrawer()
-      case 'close':
         break
       case 'back':
         if (this.router.url.includes('search')) {

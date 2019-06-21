@@ -1,9 +1,5 @@
-.flexible-space {
-  flex: 1 1 auto;
-}
-
 .navigation-icon {
-  margin-right: 16px;
+  margin-right: 8px;
 }
 
 .contextual-action-bar {
@@ -14,4 +10,8 @@
 .bottom-row {
   padding: 0;
   height: 48px;
+}
+
+.flexible-space {
+  flex: 1 1 auto;
 }

@@ -48,6 +48,7 @@ export class AppBarComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
+    this.filterSub.unsubscribe()
     this.navigateSub.unsubscribe()
   }
 

@@ -1,4 +1,9 @@
-<app-bar-content [state]="'search'"></app-bar-content>
+<app-bar-content
+  [state]="'search'"
+  [placeholder]="'Search Villains'"
+  [term]="query$ | async"
+  (searchTerm)="onSearch($event)">
+</app-bar-content>
 <p>
   villains-search works!
 </p>
