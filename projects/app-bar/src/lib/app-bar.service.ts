@@ -17,7 +17,7 @@ export class AppBarService {
   }
 
   expandSearch() {
-    this._search$.next({ ...this._search$.value, expanded: true })
+    this._search$.next({ ...emptySearch, expanded: true })
   }
 
   filter() {

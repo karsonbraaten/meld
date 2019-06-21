@@ -15,7 +15,7 @@ import { CdkPortal, DomPortalHost, PortalHost } from '@angular/cdk/portal'
 import { Subscription } from 'rxjs'
 
 import { AppBarService } from '../app-bar.service'
-import { Search, AppBarState, NavigationAction } from '../model'
+import { AppBarState, NavigationAction } from '../model'
 
 @Component({
   selector: 'app-bar-content',
@@ -90,8 +90,9 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   }
 
   onSearch() {
-    this.searchExpand.emit()
+    this.state = 'search'
     this.appBar.expandSearch()
+    this.searchExpand.emit()
   }
 
   onFilter() {
