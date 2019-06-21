@@ -17,7 +17,7 @@ import { AppBarService } from './app-bar.service'
 import { Search, NavigationAction } from './model'
 
 @Component({
-  selector: 'mel-app-bar',
+  selector: 'app-bar',
   templateUrl: './app-bar.component.html',
   styleUrls: ['./app-bar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
