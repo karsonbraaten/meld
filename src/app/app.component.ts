@@ -4,6 +4,7 @@ import {
   PathLocationStrategy
 } from '@angular/common'
 import { Component, ViewChild } from '@angular/core'
+import { Router } from '@angular/router'
 
 import { NavigationAction } from '@meld/app-bar'
 import { ScaffoldComponent } from '@meld/scaffold'
@@ -20,7 +21,7 @@ import { ScaffoldComponent } from '@meld/scaffold'
 export class AppComponent {
   @ViewChild(ScaffoldComponent, { static: true }) scaffold: ScaffoldComponent
 
-  constructor(private location: Location) {}
+  constructor(private router: Router, private location: Location) {}
 
   onFilter() {
     this.scaffold.toggleSideSheet()
@@ -33,10 +34,13 @@ export class AppComponent {
       case 'close':
         break
       case 'back':
-        this.location.back()
+        if (this.router.url.includes('search')) {
+          const url = this.router.url.replace('/search', '').split('?')[0] // 🤷‍♂️
+          this.router.navigateByUrl(`/${url}`)
+        } else {
+          this.location.back()
+        }
         break
     }
   }
-
-  title = 'meld'
 }
