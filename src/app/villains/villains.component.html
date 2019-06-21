@@ -1,6 +1,6 @@
 <app-bar-content [searchIcon]="true" [filterIcon]="true" (searchExpand)="onSearchExpand()">
     <h1 appBarTitle>Villains</h1>
 </app-bar-content>
-<side-sheet [titleText]="'Filters'">
-</side-sheet>
+<!-- <side-sheet [titleText]="'Filters'">
+</side-sheet> -->
 <villain-list [villains]="villains$ | async"></villain-list>

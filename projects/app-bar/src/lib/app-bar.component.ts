@@ -15,6 +15,7 @@ import { SearchInputComponent } from './search-input/search-input.component'
 
 import { AppBarService } from './app-bar.service'
 import { Search, NavigationAction } from './model'
+import { tap } from 'rxjs/operators'
 
 @Component({
   selector: 'mel-app-bar',
@@ -26,9 +27,10 @@ export class AppBarComponent implements OnInit, OnDestroy {
   @Input() color: ThemePalette = undefined
 
   @Output() filter = new EventEmitter()
+  @Output() showFilter = new EventEmitter<boolean>()
   @Output() navigate = new EventEmitter<NavigationAction>()
 
-  @ViewChild('search', { static: false }) set search(
+  @ViewChild('searchInput', { static: false }) set searchInput(
     input: SearchInputComponent | null
   ) {
     if (!input) return
@@ -45,11 +47,16 @@ export class AppBarComponent implements OnInit, OnDestroy {
     this.navigateSub = this.appBar.navigate$.subscribe(action =>
       this.navigate.emit(action)
     )
+
+    this.showFilterSub = this.appBar.showFilter$.subscribe(show =>
+      this.showFilter.emit(show)
+    )
   }
 
   ngOnDestroy() {
     this.filterSub.unsubscribe()
     this.navigateSub.unsubscribe()
+    this.showFilterSub.unsubscribe()
   }
 
   onClose(event: Event) {
@@ -64,4 +71,5 @@ export class AppBarComponent implements OnInit, OnDestroy {
   search$: Observable<Search>
   private filterSub: Subscription
   private navigateSub: Subscription
+  private showFilterSub: Subscription
 }

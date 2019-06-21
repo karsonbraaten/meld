@@ -36,6 +36,14 @@ export class ScaffoldComponent implements AfterContentInit {
     this.sideSheetService.close$.subscribe(_ => this.toggleSideSheet())
   }
 
+  openSideSheet() {
+    this.isGtxs ? this.standardSideSheet.open() : this.modalSideSheet.open()
+  }
+
+  closeSideSheet() {
+    this.isGtxs ? this.standardSideSheet.close() : this.modalSideSheet.close()
+  }
+
   toggleSideSheet() {
     this.isGtxs ? this.standardSideSheet.toggle() : this.modalSideSheet.toggle()
   }

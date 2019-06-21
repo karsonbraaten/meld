@@ -64,6 +64,8 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
       this.appBar.collapseSearch()
     }
 
+    this.appBar.setShowFilter(this.filterIcon)
+
     this.subscription = this.appBar.searchTerm$.subscribe(term =>
       this.searchTerm.emit(term)
     )

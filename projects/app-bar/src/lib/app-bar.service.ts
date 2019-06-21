@@ -36,6 +36,10 @@ export class AppBarService {
     this._search$.next(search)
   }
 
+  setShowFilter(show: boolean) {
+    this._showFilter$.next(show)
+  }
+
   get filter$(): Observable<void> {
     return this._filter$.asObservable()
   }
@@ -55,7 +59,12 @@ export class AppBarService {
     )
   }
 
+  get showFilter$(): Observable<boolean> {
+    return this._showFilter$.asObservable()
+  }
+
   private _filter$ = new Subject<void>()
   private _navigate$ = new Subject<NavigationAction>()
   private _search$ = new BehaviorSubject<Search>(emptySearch)
+  private _showFilter$ = new Subject<boolean>()
 }

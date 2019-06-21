@@ -27,6 +27,10 @@ export class AppComponent {
     this.scaffold.toggleSideSheet()
   }
 
+  onShowFilter(show: boolean) {
+    show ? this.scaffold.openSideSheet() : this.scaffold.closeSideSheet()
+  }
+
   onNavigate(action: NavigationAction) {
     switch (action) {
       case 'menu':
