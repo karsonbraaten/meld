@@ -1,0 +1,13 @@
+@import '~@angular/material/theming';
+@import '~projects/app-bar/src/lib/search-input/search-input.component.theme.scss';
+
+@include mat-core();
+
+$primary: mat-palette($mat-indigo);
+$accent: mat-palette($mat-pink, 600, 400, 700);
+$warn: mat-palette($mat-red);
+
+$theme: mat-dark-theme($primary, $accent);
+
+@include angular-material-theme($theme);
+@include search-input-theme($theme);
