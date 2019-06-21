@@ -15,7 +15,6 @@ import { SearchInputComponent } from './search-input/search-input.component'
 
 import { AppBarService } from './app-bar.service'
 import { Search, NavigationAction } from './model'
-import { tap } from 'rxjs/operators'
 
 @Component({
   selector: 'mel-app-bar',

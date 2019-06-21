@@ -33,7 +33,8 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   @Input() placeholder: string | null
   @Input() term: string | null
 
-  @Output() searchExpand = new EventEmitter()
+  @Output() close = new EventEmitter<void>()
+  @Output() searchExpand = new EventEmitter<void>()
   @Output() searchTerm = new EventEmitter<string>()
 
   @ViewChild(CdkPortal, { static: false }) portal: CdkPortal
@@ -85,6 +86,11 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   ngOnDestroy(): void {
     this.portalHost.detach()
     this.subscription.unsubscribe()
+  }
+
+  onClose() {
+    this.state = 'regular'
+    this.close.emit()
   }
 
   onNavigate(action: NavigationAction) {

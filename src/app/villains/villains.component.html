@@ -1,6 +1,30 @@
-<app-bar-content [searchIcon]="true" [filterIcon]="true" (searchExpand)="onSearchExpand()">
+<app-bar-content
+    [state]="list.selectedOptions.selected.length > 0 ? 'contextual' : 'regular'"
+    [filterIcon]="true"
+    [searchIcon]="true"
+    (close)="list.selectedOptions.clear()"
+    (searchExpand)="onSearchExpand()">
     <h1 appBarTitle>Villains</h1>
+    <h1 contextualTitle>{{ list.selectedOptions.selected.length }} selected</h1>
+    <ng-container contextualActions>
+        <button mat-icon-button>
+          <mat-icon>share</mat-icon>
+        </button>
+        <button mat-icon-button (click)="onDelete(list.selectedOptions.selected)">
+          <mat-icon>delete</mat-icon>
+        </button>
+        <button mat-icon-button>
+          <mat-icon>more_vert</mat-icon>
+        </button>
+      </ng-container>
 </app-bar-content>
-<!-- <side-sheet [titleText]="'Filters'">
-</side-sheet> -->
-<villain-list [villains]="villains$ | async"></villain-list>
+<side-sheet [titleText]="'Filters'">
+</side-sheet>
+<mat-selection-list #list>
+    <mat-list-option
+        *ngFor="let villain of villains$ | async"
+        checkboxPosition="before"
+        [value]="villain">
+        <p matLine>{{ villain.name }}</p>
+    </mat-list-option>
+</mat-selection-list>

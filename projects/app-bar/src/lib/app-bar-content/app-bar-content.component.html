@@ -14,7 +14,7 @@
     <ng-content select="[appBarActions]"></ng-content>
   </mat-toolbar-row>
   <mat-toolbar-row *ngIf="state === 'contextual'" class="contextual-action-bar">
-    <button mat-icon-button (click)="onNavigate('close')" class="navigation-icon">
+    <button mat-icon-button (click)="onClose()" class="navigation-icon">
       <mat-icon>close</mat-icon>
     </button>
     <ng-content select="[contextualTitle]"></ng-content>
