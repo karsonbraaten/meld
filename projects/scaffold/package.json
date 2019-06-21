@@ -7,6 +7,7 @@
     "url" : "https://github.com/karsonbraaten/meld"
   },
   "homepage": "https://github.com/karsonbraaten/meld",
+  "private": false,
   "peerDependencies": {
     "@angular/common": "^8.0.0",
     "@angular/core": "^8.0.0",

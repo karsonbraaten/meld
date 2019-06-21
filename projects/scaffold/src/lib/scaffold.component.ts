@@ -1,4 +1,4 @@
-import { Component, AfterContentInit, ViewChild } from '@angular/core'
+import { Component, AfterContentInit, ViewChild, Input } from '@angular/core'
 import { MatSidenav } from '@angular/material'
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
 import { Observable } from 'rxjs'
@@ -11,7 +11,10 @@ import { SideSheetService } from './side-sheet/side-sheet.service'
   styleUrls: ['./scaffold.component.scss']
 })
 export class ScaffoldComponent implements AfterContentInit {
-  @ViewChild('drawer', { static: true }) drawer: MatSidenav
+  @Input() disableDrawer: boolean = false
+  @Input() disableSideSheet: boolean = false
+
+  @ViewChild('drawer', { static: false }) drawer: MatSidenav
   @ViewChild('modalSideSheet', { static: false }) modalSideSheet: MatSidenav
   @ViewChild('standardSideSheet', { static: false })
   standardSideSheet: MatSidenav
