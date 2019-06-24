@@ -1,5 +1,5 @@
 {
-  "name": "meld",
+  "name": "ngx-meld",
   "version": "0.1.0",
   "scripts": {
     "ng": "ng",

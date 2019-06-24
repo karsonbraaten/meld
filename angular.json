@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "meld": {
+    "ngx-meld": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/meld",
+            "outputPath": "dist/ngx-meld",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -63,18 +63,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "meld:build"
+            "browserTarget": "ngx-meld:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "meld:build:production"
+              "browserTarget": "ngx-meld:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "meld:build"
+            "browserTarget": "ngx-meld:build"
           }
         },
         "test": {
@@ -112,11 +112,11 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "meld:serve"
+            "devServerTarget": "ngx-meld:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "meld:serve:production"
+              "devServerTarget": "ngx-meld:serve:production"
             }
           }
         }
@@ -193,5 +193,5 @@
       }
     }
   },
-  "defaultProject": "meld"
+  "defaultProject": "ngx-meld"
 }
