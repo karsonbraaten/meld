@@ -1,4 +1,4 @@
-# @meld/app-bar
+# @ngx-meld/app-bar
 
 Angular implementation of the Material Design App bar component.
 

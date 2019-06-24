@@ -4,8 +4,8 @@ import { MatButtonModule } from '@angular/material/button'
 import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 
-import { AppBarModule } from '@meld/app-bar'
-import { ScaffoldModule } from '@meld/scaffold'
+import { AppBarModule } from '@ngx-meld/app-bar'
+import { ScaffoldModule } from '@ngx-meld/scaffold'
 
 import { VillainsRoutingModule } from './villains-routing.module'
 import { VillainsComponent } from './villains.component'

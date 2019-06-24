@@ -22,16 +22,16 @@
       "@entities/*": [
         "src/entities/*"
       ],
-      "@meld/scaffold": [
+      "@ngx-meld/scaffold": [
         "dist/scaffold"
       ],
-      "@meld/scaffold/*": [
+      "@ngx-meld/scaffold/*": [
         "dist/scaffold/*"
       ],
-      "@meld/app-bar": [
+      "@ngx-meld/app-bar": [
         "dist/app-bar"
       ],
-      "@meld/app-bar/*": [
+      "@ngx-meld/app-bar/*": [
         "dist/app-bar/*"
       ]
     }

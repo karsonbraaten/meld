@@ -6,8 +6,8 @@ import {
 import { Component, ViewChild } from '@angular/core'
 import { Router } from '@angular/router'
 
-import { NavigationAction } from '@meld/app-bar'
-import { ScaffoldComponent } from '@meld/scaffold'
+import { NavigationAction } from '@ngx-meld/app-bar'
+import { ScaffoldComponent } from '@ngx-meld/scaffold'
 
 @Component({
   providers: [

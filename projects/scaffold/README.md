@@ -1,4 +1,4 @@
-# @meld/scaffold
+# @ngx-meld/scaffold
 
 Angular component that implements the basic material design visual layout structure.
 

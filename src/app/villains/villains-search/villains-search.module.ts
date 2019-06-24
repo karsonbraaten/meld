@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core'
 import { CommonModule } from '@angular/common'
 
-import { AppBarModule } from '@meld/app-bar'
+import { AppBarModule } from '@ngx-meld/app-bar'
 
 import { VillainsSearchRoutingModule } from './villains-search-routing.module'
 import { VillainsSearchComponent } from './villains-search.component'

@@ -2,8 +2,8 @@ import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { NgModule } from '@angular/core'
 
-import { AppBarModule } from '@meld/app-bar'
-import { ScaffoldModule } from '@meld/scaffold'
+import { AppBarModule } from '@ngx-meld/app-bar'
+import { ScaffoldModule } from '@ngx-meld/scaffold'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
