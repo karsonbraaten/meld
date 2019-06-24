@@ -26,6 +26,9 @@ export class SideSheetComponent implements AfterViewInit, OnDestroy {
 
   @ViewChild(CdkPortal, { static: false }) portal: CdkPortal
 
+  private portalHost: PortalHost
+  private subscription: Subscription
+
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
     private injector: Injector,
@@ -65,7 +68,4 @@ export class SideSheetComponent implements AfterViewInit, OnDestroy {
 
     this.portalHost.attach(this.portal)
   }
-
-  private portalHost: PortalHost
-  private subscription: Subscription
 }

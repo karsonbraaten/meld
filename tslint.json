@@ -1,5 +1,10 @@
 {
   "extends": "tslint:recommended",
+  "linterOptions": {
+    "exclude": [
+      "src/entities/villain/villain.service.ts"
+    ]
+  },
   "rules": {
     "semicolon": false,
     "array-type": false,

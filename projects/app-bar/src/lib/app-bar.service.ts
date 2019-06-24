@@ -10,46 +10,21 @@ const emptySearch: Search = { expanded: false, placeholder: '', term: '' }
   providedIn: 'root'
 })
 export class AppBarService {
-  constructor() {}
-
-  collapseSearch() {
-    this._search$.next(emptySearch)
-  }
-
-  expandSearch() {
-    this._search$.next({ ...emptySearch, expanded: true })
-  }
-
-  filter() {
-    this._filter$.next()
-  }
-
-  navigate(action: NavigationAction) {
-    this._navigate$.next(action)
-  }
-
-  search(term: string) {
-    this._search$.next({ ...this._search$.value, term })
-  }
-
-  setSearch(search: Search) {
-    this._search$.next(search)
-  }
-
-  setShowFilter(show: boolean) {
-    this._showFilter$.next(show)
-  }
+  private filterSubject = new Subject<void>()
+  private navigateSubject = new Subject<NavigationAction>()
+  private searchBS = new BehaviorSubject<Search>(emptySearch)
+  private showFilterSubject = new Subject<boolean>()
 
   get filter$(): Observable<void> {
-    return this._filter$.asObservable()
+    return this.filterSubject.asObservable()
   }
 
   get navigate$(): Observable<NavigationAction> {
-    return this._navigate$.asObservable()
+    return this.navigateSubject.asObservable()
   }
 
   get search$(): Observable<Search> {
-    return this._search$.asObservable()
+    return this.searchBS.asObservable()
   }
 
   get searchTerm$(): Observable<string> {
@@ -60,11 +35,36 @@ export class AppBarService {
   }
 
   get showFilter$(): Observable<boolean> {
-    return this._showFilter$.asObservable()
+    return this.showFilterSubject.asObservable()
   }
 
-  private _filter$ = new Subject<void>()
-  private _navigate$ = new Subject<NavigationAction>()
-  private _search$ = new BehaviorSubject<Search>(emptySearch)
-  private _showFilter$ = new Subject<boolean>()
+  constructor() {}
+
+  collapseSearch() {
+    this.searchBS.next(emptySearch)
+  }
+
+  expandSearch() {
+    this.searchBS.next({ ...emptySearch, expanded: true })
+  }
+
+  filter() {
+    this.filterSubject.next()
+  }
+
+  navigate(action: NavigationAction) {
+    this.navigateSubject.next(action)
+  }
+
+  search(term: string) {
+    this.searchBS.next({ ...this.searchBS.value, term })
+  }
+
+  setSearch(search: Search) {
+    this.searchBS.next(search)
+  }
+
+  setShowFilter(show: boolean) {
+    this.showFilterSubject.next(show)
+  }
 }

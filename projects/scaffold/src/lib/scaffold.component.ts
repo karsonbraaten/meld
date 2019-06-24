@@ -6,7 +6,7 @@ import { map, tap } from 'rxjs/operators'
 import { SideSheetService } from './side-sheet/side-sheet.service'
 
 @Component({
-  selector: 'mel-scaffold',
+  selector: 'ngx-scaffold',
   templateUrl: './scaffold.component.html',
   styleUrls: ['./scaffold.component.scss']
 })
@@ -18,6 +18,13 @@ export class ScaffoldComponent implements AfterContentInit {
   @ViewChild('modalSideSheet', { static: false }) modalSideSheet: MatSidenav
   @ViewChild('standardSideSheet', { static: false })
   standardSideSheet: MatSidenav
+
+  drawerOpen$: Observable<boolean>
+  gtxs$: Observable<boolean>
+
+  private get isGtxs(): boolean {
+    return !this.breakpointObserver.isMatched(Breakpoints.XSmall)
+  }
 
   constructor(
     private breakpointObserver: BreakpointObserver,
@@ -55,12 +62,5 @@ export class ScaffoldComponent implements AfterContentInit {
 
   toggleDrawer() {
     this.drawer.toggle()
-  }
-
-  drawerOpen$: Observable<boolean>
-  gtxs$: Observable<boolean>
-
-  private get isGtxs(): boolean {
-    return !this.breakpointObserver.isMatched(Breakpoints.XSmall)
   }
 }

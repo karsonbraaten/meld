@@ -1,10 +1,16 @@
-import { Directive, ElementRef, Inject, PLATFORM_ID } from '@angular/core'
+import {
+  Directive,
+  ElementRef,
+  Inject,
+  PLATFORM_ID,
+  AfterViewInit
+} from '@angular/core'
 import { isPlatformBrowser } from '@angular/common'
 
 @Directive({
   selector: '[firstResponder]'
 })
-export class FirstResponderDirective {
+export class FirstResponderDirective implements AfterViewInit {
   readonly platformId: string
 
   constructor(
@@ -15,7 +21,9 @@ export class FirstResponderDirective {
   }
 
   ngAfterViewInit(): void {
-    if (!isPlatformBrowser(this.platformId)) return
+    if (!isPlatformBrowser(this.platformId)) {
+      return
+    }
     setTimeout(() => this.element.nativeElement.focus(), 0.5)
     setTimeout(() => (this.element.nativeElement.style.display = 'block'), 0.5)
   }

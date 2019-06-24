@@ -1,9 +1,9 @@
-<app-bar-content
+<ngx-app-bar-content
   [state]="'search'"
   [placeholder]="'Search Villains'"
-  [term]="query$ | async"
-  (searchTerm)="onSearch($event)">
-</app-bar-content>
+  [searchText]="query$ | async"
+  (search)="onSearch($event)">
+</ngx-app-bar-content>
 <p>
   villains-search works!
 </p>

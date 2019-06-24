@@ -8,6 +8,8 @@ import { map } from 'rxjs/operators'
   styleUrls: ['./villains-search.component.scss']
 })
 export class VillainsSearchComponent implements OnInit {
+  query$: Observable<string>
+
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
@@ -20,6 +22,4 @@ export class VillainsSearchComponent implements OnInit {
     const relativeTo = this.route
     this.router.navigate(['.'], { relativeTo, queryParams })
   }
-
-  query$: Observable<string>
 }

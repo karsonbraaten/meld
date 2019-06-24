@@ -9,7 +9,8 @@ import {
   ViewChild,
   Output,
   EventEmitter,
-  ChangeDetectionStrategy
+  ChangeDetectionStrategy,
+  OnDestroy
 } from '@angular/core'
 import { CdkPortal, DomPortalHost, PortalHost } from '@angular/cdk/portal'
 import { Subscription } from 'rxjs'
@@ -18,27 +19,31 @@ import { AppBarService } from '../app-bar.service'
 import { AppBarState, NavigationAction } from '../model'
 
 @Component({
-  selector: 'app-bar-content',
+  selector: 'ngx-app-bar-content',
   templateUrl: './app-bar-content.component.html',
   styleUrls: ['./app-bar-content.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppBarContentComponent implements OnInit, AfterViewInit {
-  @Input() bottom: boolean = false
-  @Input() filterIcon: boolean = false
-  @Input() searchIcon: boolean = false
+export class AppBarContentComponent
+  implements OnInit, AfterViewInit, OnDestroy {
+  @Input() bottom = false
+  @Input() filterIcon = false
+  @Input() searchIcon = false
   @Input() navigationIcon: 'menu' | 'back' = 'menu'
 
   @Input() state: AppBarState = 'regular'
 
   @Input() placeholder: string | null
-  @Input() term: string | null
+  @Input() searchText: string | null
 
-  @Output() close = new EventEmitter<void>()
+  @Output() dismiss = new EventEmitter<void>()
   @Output() searchExpand = new EventEmitter<void>()
-  @Output() searchTerm = new EventEmitter<string>()
+  @Output() search = new EventEmitter<string>()
 
   @ViewChild(CdkPortal, { static: false }) portal: CdkPortal
+
+  private portalHost: PortalHost
+  private subscription: Subscription
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -53,10 +58,10 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
       this.appBar.setSearch({ placeholder, expanded: true, term: '' })
     }
 
-    const term = this.term
-    if (term) {
+    const searchText = this.searchText
+    if (searchText) {
       this.appBar.setSearch({
-        term,
+        term: searchText,
         expanded: true,
         placeholder: this.placeholder || ''
       })
@@ -68,7 +73,9 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
 
     this.appBar.setShowFilter(this.filterIcon)
 
-    this.subscription = this.appBar.searchTerm$.subscribe(term => this.searchTerm.emit(term))
+    this.subscription = this.appBar.searchTerm$.subscribe(term =>
+      this.search.emit(term)
+    )
   }
 
   ngAfterViewInit(): void {
@@ -89,7 +96,7 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
 
   onClose() {
     this.state = 'regular'
-    this.close.emit()
+    this.dismiss.emit()
   }
 
   onNavigate(action: NavigationAction) {
@@ -109,7 +116,4 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   get navigationIconName(): 'menu' | 'arrow_back' {
     return this.navigationIcon === 'menu' ? 'menu' : 'arrow_back'
   }
-
-  private portalHost: PortalHost
-  private subscription: Subscription
 }

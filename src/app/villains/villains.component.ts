@@ -10,6 +10,8 @@ import { Villain, VillainService } from '@entities/villain'
   styleUrls: ['./villains.component.scss']
 })
 export class VillainsComponent implements OnInit {
+  villains$: Observable<Villain[]>
+
   constructor(
     private route: ActivatedRoute,
     private router: Router,
@@ -28,6 +30,4 @@ export class VillainsComponent implements OnInit {
   onSearchExpand() {
     this.router.navigate(['search'], { relativeTo: this.route })
   }
-
-  villains$: Observable<Villain[]>
 }

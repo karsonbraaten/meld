@@ -1,8 +1,8 @@
-<app-bar-content
+<ngx-app-bar-content
     [state]="list.selectedOptions.selected.length > 0 ? 'contextual' : 'regular'"
     [filterIcon]="true"
     [searchIcon]="true"
-    (close)="list.selectedOptions.clear()"
+    (dismiss)="list.selectedOptions.clear()"
     (searchExpand)="onSearchExpand()">
     <h1 appBarTitle>Villains</h1>
     <h1 contextualTitle>{{ list.selectedOptions.selected.length }} selected</h1>
@@ -17,7 +17,7 @@
           <mat-icon>more_vert</mat-icon>
         </button>
       </ng-container>
-</app-bar-content>
+</ngx-app-bar-content>
 <side-sheet [titleText]="'Filters'">
 </side-sheet>
 <mat-selection-list #list>

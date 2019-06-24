@@ -17,7 +17,7 @@ import { AppBarService } from './app-bar.service'
 import { Search, NavigationAction } from './model'
 
 @Component({
-  selector: 'app-bar',
+  selector: 'ngx-app-bar',
   templateUrl: './app-bar.component.html',
   styleUrls: ['./app-bar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
@@ -32,9 +32,16 @@ export class AppBarComponent implements OnInit, OnDestroy {
   @ViewChild('searchInput', { static: false }) set searchInput(
     input: SearchInputComponent | null
   ) {
-    if (!input) return
+    if (!input) {
+      return
+    }
     input.focus()
   }
+
+  search$: Observable<Search>
+  private filterSub: Subscription
+  private navigateSub: Subscription
+  private showFilterSub: Subscription
 
   constructor(private appBar: AppBarService) {}
 
@@ -66,9 +73,4 @@ export class AppBarComponent implements OnInit, OnDestroy {
   onSearch(term: string) {
     this.appBar.search(term)
   }
-
-  search$: Observable<Search>
-  private filterSub: Subscription
-  private navigateSub: Subscription
-  private showFilterSub: Subscription
 }

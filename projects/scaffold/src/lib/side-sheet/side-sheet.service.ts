@@ -7,24 +7,24 @@ import { SideSheetStyle } from './model'
   providedIn: 'root'
 })
 export class SideSheetService {
-  constructor() {}
-
-  attach(style: SideSheetStyle) {
-    this._style$.next(style)
-  }
-
-  close() {
-    this._close$.next()
-  }
+  private closeSubject = new Subject<void>()
+  private styleRS = new ReplaySubject<SideSheetStyle>()
 
   get close$(): Observable<void> {
-    return this._close$.asObservable()
+    return this.closeSubject.asObservable()
   }
 
   get style$(): Observable<SideSheetStyle> {
-    return this._style$.asObservable()
+    return this.styleRS.asObservable()
   }
 
-  private _close$ = new Subject<void>()
-  private _style$ = new ReplaySubject<SideSheetStyle>()
+  constructor() {}
+
+  attach(style: SideSheetStyle) {
+    this.styleRS.next(style)
+  }
+
+  close() {
+    this.closeSubject.next()
+  }
 }
