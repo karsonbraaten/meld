@@ -1,7 +1,11 @@
 <ng-template cdk-portal>
   <mat-toolbar-row *ngIf="state === 'regular'">
-    <button mat-icon-button (click)="onNavigate('menu')" class="navigation-icon">
-      <mat-icon>{{ navigationIcon }}</mat-icon>
+    <button
+      mat-icon-button
+      (click)="onNavigate(navigationIconName === 'menu' ? 'menu' : 'back')"
+      class="navigation-icon"
+    >
+      <mat-icon>{{ navigationIconName }}</mat-icon>
     </button>
     <ng-content select="[appBarTitle]"></ng-content>
     <span class="flexible-space"></span>

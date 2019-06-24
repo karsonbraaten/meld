@@ -27,6 +27,7 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
   @Input() bottom: boolean = false
   @Input() filterIcon: boolean = false
   @Input() searchIcon: boolean = false
+  @Input() navigationIcon: 'menu' | 'back' = 'menu'
 
   @Input() state: AppBarState = 'regular'
 
@@ -67,9 +68,7 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
 
     this.appBar.setShowFilter(this.filterIcon)
 
-    this.subscription = this.appBar.searchTerm$.subscribe(term =>
-      this.searchTerm.emit(term)
-    )
+    this.subscription = this.appBar.searchTerm$.subscribe(term => this.searchTerm.emit(term))
   }
 
   ngAfterViewInit(): void {
@@ -107,8 +106,8 @@ export class AppBarContentComponent implements OnInit, AfterViewInit {
     this.appBar.filter()
   }
 
-  get navigationIcon(): 'menu' | 'arrow_back' {
-    return this.state === 'regular' ? 'menu' : 'arrow_back'
+  get navigationIconName(): 'menu' | 'arrow_back' {
+    return this.navigationIcon === 'menu' ? 'menu' : 'arrow_back'
   }
 
   private portalHost: PortalHost
