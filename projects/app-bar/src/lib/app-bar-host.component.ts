@@ -17,12 +17,12 @@ import { AppBarService } from './app-bar.service'
 import { Search, NavigationAction } from './model'
 
 @Component({
-  selector: 'ngx-app-bar',
-  templateUrl: './app-bar.component.html',
-  styleUrls: ['./app-bar.component.css'],
+  selector: 'ngx-app-bar-host',
+  templateUrl: './app-bar-host.component.html',
+  styleUrls: ['./app-bar-host.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppBarComponent implements OnInit, OnDestroy {
+export class AppBarHostComponent implements OnInit, OnDestroy {
   @Input() color: ThemePalette = undefined
 
   @Output() filter = new EventEmitter()
