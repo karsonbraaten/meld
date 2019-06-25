@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
+import { RouterModule } from '@angular/router'
 import { LayoutModule } from '@angular/cdk/layout'
 import { PortalModule } from '@angular/cdk/portal'
 import { MatSidenavModule } from '@angular/material'
@@ -12,6 +13,7 @@ import { ScaffoldComponent } from './scaffold.component'
   declarations: [ScaffoldComponent],
   imports: [
     CommonModule,
+    RouterModule,
     LayoutModule,
     PortalModule,
     MatSidenavModule,

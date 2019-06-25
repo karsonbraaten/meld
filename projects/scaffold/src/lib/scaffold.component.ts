@@ -1,4 +1,5 @@
 import { Component, AfterContentInit, ViewChild, Input } from '@angular/core'
+import { Router } from '@angular/router'
 import { MatSidenav } from '@angular/material'
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
 import { Observable } from 'rxjs'
@@ -27,6 +28,7 @@ export class ScaffoldComponent implements AfterContentInit {
   }
 
   constructor(
+    private router: Router,
     private breakpointObserver: BreakpointObserver,
     private sideSheetService: SideSheetService
   ) {}
@@ -42,6 +44,12 @@ export class ScaffoldComponent implements AfterContentInit {
         this.sideSheetService.attach(gtxs ? 'standard' : 'modal')
       })
     )
+
+    this.router.events.subscribe(() => {
+      if (!this.isGtxs) {
+        this.drawer.close()
+      }
+    })
 
     this.sideSheetService.close$.subscribe(_ => this.toggleSideSheet())
   }
