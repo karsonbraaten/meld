@@ -11,10 +11,10 @@ import {
 import { ThemePalette } from '@angular/material'
 import { Observable, Subscription } from 'rxjs'
 
-import { SearchInputComponent } from './search-input/search-input.component'
+import { SearchInputComponent } from '../search-input/search-input.component'
 
-import { AppBarService } from './app-bar.service'
-import { Search, NavigationAction } from './model'
+import { AppBarService } from '../app-bar.service'
+import { Search, NavigationAction } from '../model'
 
 @Component({
   selector: 'ngx-app-bar-host',

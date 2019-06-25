@@ -1,4 +1,4 @@
-<ngx-app-bar-content
+<ngx-app-bar
     [state]="list.selectedOptions.selected.length > 0 ? 'contextual' : 'regular'"
     [filterIcon]="true"
     [searchIcon]="true"
@@ -17,7 +17,7 @@
           <mat-icon>more_vert</mat-icon>
         </button>
       </ng-container>
-</ngx-app-bar-content>
+</ngx-app-bar>
 <side-sheet [titleText]="'Filters'">
 </side-sheet>
 <mat-selection-list #list>

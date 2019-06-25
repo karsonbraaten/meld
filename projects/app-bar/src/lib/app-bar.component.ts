@@ -15,17 +15,16 @@ import {
 import { CdkPortal, DomPortalHost, PortalHost } from '@angular/cdk/portal'
 import { Subscription } from 'rxjs'
 
-import { AppBarService } from '../app-bar.service'
-import { AppBarState, NavigationAction } from '../model'
+import { AppBarService } from './app-bar.service'
+import { AppBarState, NavigationAction } from './model'
 
 @Component({
-  selector: 'ngx-app-bar-content',
-  templateUrl: './app-bar-content.component.html',
-  styleUrls: ['./app-bar-content.component.css'],
+  selector: 'ngx-app-bar',
+  templateUrl: './app-bar.component.html',
+  styleUrls: ['./app-bar.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppBarContentComponent
-  implements OnInit, AfterViewInit, OnDestroy {
+export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() bottom = false
   @Input() filterIcon = false
   @Input() searchIcon = false

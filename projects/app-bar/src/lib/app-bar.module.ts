@@ -7,11 +7,11 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 
 import { SearchInputModule } from './search-input/search-input.module'
 
-import { AppBarHostComponent } from './app-bar-host.component'
-import { AppBarContentComponent } from './app-bar-content/app-bar-content.component'
+import { AppBarHostComponent } from './app-bar-host/app-bar-host.component'
+import { AppBarComponent } from './app-bar.component'
 
 @NgModule({
-  declarations: [AppBarHostComponent, AppBarContentComponent],
+  declarations: [AppBarHostComponent, AppBarComponent],
   imports: [
     CommonModule,
     PortalModule,
@@ -20,6 +20,6 @@ import { AppBarContentComponent } from './app-bar-content/app-bar-content.compon
     MatToolbarModule,
     SearchInputModule
   ],
-  exports: [AppBarHostComponent, AppBarContentComponent]
+  exports: [AppBarHostComponent, AppBarComponent]
 })
 export class AppBarModule {}
