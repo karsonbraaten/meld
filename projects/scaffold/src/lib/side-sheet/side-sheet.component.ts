@@ -46,7 +46,9 @@ export class SideSheetComponent implements AfterViewInit, OnDestroy {
     if (this.portalHost) {
       this.portalHost.detach()
     }
-    this.subscription.unsubscribe()
+    if (this.subscription) {
+      this.subscription.unsubscribe()
+    }
   }
 
   onClose() {

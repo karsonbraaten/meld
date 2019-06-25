@@ -89,8 +89,12 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.portalHost.detach()
-    this.subscription.unsubscribe()
+    if (this.portalHost) {
+      this.portalHost.detach()
+    }
+    if (this.subscription) {
+      this.subscription.unsubscribe()
+    }
   }
 
   onClose() {
