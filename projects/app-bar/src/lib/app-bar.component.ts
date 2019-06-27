@@ -28,7 +28,7 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
   @Input() bottom = false
   @Input() filterIcon = false
   @Input() searchIcon = false
-  @Input() navigationIcon: 'menu' | 'back' = 'menu'
+  @Input() navigationIcon: 'menu' | 'back' | 'cancel' = 'menu'
 
   @Input() state: AppBarState = 'regular'
 
@@ -116,7 +116,14 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
     this.appBar.filter()
   }
 
-  get navigationIconName(): 'menu' | 'arrow_back' {
-    return this.navigationIcon === 'menu' ? 'menu' : 'arrow_back'
+  get navigationIconName(): 'menu' | 'arrow_back' | 'close' {
+    switch (this.navigationIcon) {
+      case 'menu':
+        return 'menu'
+      case 'back':
+        return 'arrow_back'
+      case 'cancel':
+        return 'close'
+    }
   }
 }
