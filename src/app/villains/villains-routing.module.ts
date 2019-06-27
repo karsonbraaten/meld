@@ -10,6 +10,13 @@ const routes: Routes = [
     component: VillainsComponent
   },
   {
+    path: 'new',
+    loadChildren: () =>
+      import('./villains-new/villains-new.module').then(
+        m => m.VillainsNewModule
+      )
+  },
+  {
     path: 'search',
     loadChildren: () =>
       import('./villains-search/villains-search.module').then(

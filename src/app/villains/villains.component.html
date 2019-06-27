@@ -21,10 +21,13 @@
 <side-sheet [titleText]="'Filters'">
 </side-sheet>
 <mat-selection-list #list>
-    <mat-list-option
-        *ngFor="let villain of villains$ | async"
-        checkboxPosition="before"
-        [value]="villain">
-        <p matLine>{{ villain.name }}</p>
-    </mat-list-option>
+  <mat-list-option
+  *ngFor="let villain of villains$ | async"
+  checkboxPosition="before"
+  [value]="villain">
+  <p matLine>{{ villain.name }}</p>
+</mat-list-option>
 </mat-selection-list>
+<a mat-fab class="fab" [routerLink]="['new']">
+  <mat-icon>add</mat-icon>
+</a>
