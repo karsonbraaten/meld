@@ -1,7 +1,9 @@
 <ngx-app-bar [navigationIcon]="'cancel'">
   <h1 appBarTitle>New villain</h1>
-  <button mat-button appBarActions>Save</button>
+  <button appBarActions mat-button
+    [disabled]="form.invalid"
+    (click)="onSave(form.value)">
+    Save
+  </button>
 </ngx-app-bar>
-<p>
-  villains-new works!
-</p>
+<villain-form #form></villain-form>
