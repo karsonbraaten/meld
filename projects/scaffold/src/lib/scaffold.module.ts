@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core'
 import { RouterModule } from '@angular/router'
 import { LayoutModule } from '@angular/cdk/layout'
 import { PortalModule } from '@angular/cdk/portal'
-import { MatSidenavModule } from '@angular/material'
+import { MatSidenavModule } from '@angular/material/sidenav'
 
 import { SideSheetModule } from './side-sheet/side-sheet.module'
 

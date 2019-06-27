@@ -26,4 +26,7 @@ mat-sidenav-container {
   height: 100%;
   position: relative;
   overflow-y: auto;
+  mat-sidenav-content {
+    z-index: unset; // fab visible on safari
+  }
 }
