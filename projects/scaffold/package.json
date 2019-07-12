@@ -1,6 +1,6 @@
 {
   "name": "@ngx-meld/scaffold",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Angular component that implements the basic material design visual layout structure.",
   "repository": {
     "type" : "git",

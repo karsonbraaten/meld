@@ -30,7 +30,7 @@
             *ngIf="!disableSideSheet"
             mode="side"
             position="end"
-            [opened]="gtxs$ | async"
+            [opened]="standardSideSheetOpen$ | async"
             [style.width]="'320px'"
             style="background: transparent;">
             <div id="standard-side-sheet"></div>

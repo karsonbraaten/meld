@@ -2,7 +2,7 @@ import { Component, AfterContentInit, ViewChild, Input } from '@angular/core'
 import { Router } from '@angular/router'
 import { MatSidenav } from '@angular/material'
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
-import { Observable } from 'rxjs'
+import { Observable, BehaviorSubject, combineLatest } from 'rxjs'
 import { map, tap } from 'rxjs/operators'
 import { SideSheetService } from './side-sheet/side-sheet.service'
 
@@ -21,7 +21,9 @@ export class ScaffoldComponent implements AfterContentInit {
   standardSideSheet: MatSidenav
 
   drawerOpen$: Observable<boolean>
-  gtxs$: Observable<boolean>
+  standardSideSheetOpen$: Observable<boolean>
+
+  private isSideSheetOpenDisabled$ = new BehaviorSubject<boolean>(false)
 
   private get isGtxs(): boolean {
     return !this.breakpointObserver.isMatched(Breakpoints.XSmall)
@@ -38,12 +40,15 @@ export class ScaffoldComponent implements AfterContentInit {
       .observe([Breakpoints.Large, Breakpoints.XLarge])
       .pipe(map(({ matches }) => matches))
 
-    this.gtxs$ = this.breakpointObserver.observe(Breakpoints.XSmall).pipe(
+    const gtxs$ = this.breakpointObserver.observe(Breakpoints.XSmall).pipe(
       map(({ matches }) => !matches),
-      tap(gtxs => {
-        this.sideSheetService.attach(gtxs ? 'standard' : 'modal')
-      })
+      tap(gtxs => this.sideSheetService.attach(gtxs ? 'standard' : 'modal'))
     )
+
+    this.standardSideSheetOpen$ = combineLatest(
+      gtxs$,
+      this.isSideSheetOpenDisabled$
+    ).pipe(map(([gtxs, openDisabled]) => gtxs && !openDisabled))
 
     this.router.events.subscribe(() => {
       if (!this.isGtxs) {
@@ -52,6 +57,14 @@ export class ScaffoldComponent implements AfterContentInit {
     })
 
     this.sideSheetService.close$.subscribe(_ => this.toggleSideSheet())
+  }
+
+  disableSideSheetOpening() {
+    this.isSideSheetOpenDisabled$.next(true)
+  }
+
+  enableSideSheetOpening() {
+    this.isSideSheetOpenDisabled$.next(false)
   }
 
   openStandardSideSheet() {
