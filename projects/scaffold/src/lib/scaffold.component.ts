@@ -64,7 +64,6 @@ export class ScaffoldComponent implements AfterContentInit {
   }
 
   enableSideSheetOpening() {
-    this.disableSideSheet = false
     this.isSideSheetOpenDisabled$.next(false)
   }
 

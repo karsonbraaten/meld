@@ -1,5 +1,9 @@
 # Changelog
 
+# 0.1.8
+
+- undo 0.1.7
+
 # 0.1.7
 
 - `enableSideSheetOpening` changes value of `disableSideSheet`
