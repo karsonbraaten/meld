@@ -51,7 +51,7 @@ export class ScaffoldComponent implements AfterContentInit {
     ).pipe(map(([gtxs, openDisabled]) => gtxs && !openDisabled))
 
     this.router.events.subscribe(() => {
-      if (!this.isGtxs) {
+      if (this.drawer.mode === 'over') {
         this.drawer.close()
       }
     })
