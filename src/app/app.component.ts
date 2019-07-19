@@ -53,6 +53,8 @@ export class AppComponent implements OnInit {
   }
 
   onShowFilter(show: boolean) {
+    this.showFilter$.next(show)
+
     if (!this.scaffold) {
       return
     }
