@@ -1,6 +1,5 @@
-<ngx-scaffold [disableDrawer]="!(user$ | async)" [disableSideSheet]="!(user$ | async)">
+<ngx-scaffold #scaffold *ngIf="user$ | async; else unauth">
   <ngx-app-bar-host top
-    *ngIf="user$ | async as user"
     (filter)="onFilter()"
     (showFilter)="onShowFilter($event)"
     (navigate)="onNavigate($event)">
@@ -18,3 +17,6 @@
   </ng-container>
   <router-outlet></router-outlet>
 </ngx-scaffold>
+<ng-template #unauth>
+  <router-outlet></router-outlet>
+</ng-template>

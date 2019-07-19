@@ -13,7 +13,7 @@ import { Router } from '@angular/router'
 
 import { NavigationAction } from '@ngx-meld/app-bar'
 import { ScaffoldComponent } from '@ngx-meld/scaffold'
-import { Observable } from 'rxjs'
+import { Observable, BehaviorSubject } from 'rxjs'
 import { AuthService, User } from './auth.service'
 
 @Component({
@@ -27,7 +27,14 @@ import { AuthService, User } from './auth.service'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  @ViewChild(ScaffoldComponent, { static: true }) scaffold: ScaffoldComponent
+  @ViewChild('scaffold', { static: false })
+  set scaffoldRef(ref: ScaffoldComponent) {
+    this.scaffold = ref
+    this.onShowFilter(this.showFilter$.value)
+  }
+  private scaffold: ScaffoldComponent
+
+  showFilter$ = new BehaviorSubject<boolean>(false)
 
   user$: Observable<User | null>
 
@@ -46,6 +53,10 @@ export class AppComponent implements OnInit {
   }
 
   onShowFilter(show: boolean) {
+    if (!this.scaffold) {
+      return
+    }
+
     if (show) {
       this.scaffold.enableSideSheetOpening()
       this.scaffold.openStandardSideSheet()
