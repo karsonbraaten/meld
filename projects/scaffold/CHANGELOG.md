@@ -1,5 +1,10 @@
 # Changelog
 
+# 0.1.9
+
+- fix bug where drawer wouldn't always close (when over content) when navigating to new page
+- add `SideSheetStyle` of 'none' to fix bug when trying to attach side sheet after scaffold had been destroyed once
+
 # 0.1.8
 
 - undo 0.1.7

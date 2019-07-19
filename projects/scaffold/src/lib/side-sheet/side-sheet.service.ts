@@ -1,27 +1,28 @@
 import { Injectable } from '@angular/core'
-import { Subject, Observable, ReplaySubject } from 'rxjs'
+import { Subject, Observable, BehaviorSubject } from 'rxjs'
 
 import { SideSheetStyle } from './model'
+import { filter } from 'rxjs/operators'
 
 @Injectable({
   providedIn: 'root'
 })
 export class SideSheetService {
   private closeSubject = new Subject<void>()
-  private styleRS = new ReplaySubject<SideSheetStyle>()
+  private styleSubject = new BehaviorSubject<SideSheetStyle>('none')
 
   get close$(): Observable<void> {
     return this.closeSubject.asObservable()
   }
 
   get style$(): Observable<SideSheetStyle> {
-    return this.styleRS.asObservable()
+    return this.styleSubject
+      .asObservable()
+      .pipe(filter(style => style !== 'none'))
   }
 
-  constructor() {}
-
   attach(style: SideSheetStyle) {
-    this.styleRS.next(style)
+    this.styleSubject.next(style)
   }
 
   close() {

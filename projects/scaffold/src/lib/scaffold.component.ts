@@ -1,8 +1,14 @@
-import { Component, AfterContentInit, ViewChild, Input } from '@angular/core'
+import {
+  Component,
+  AfterContentInit,
+  ViewChild,
+  Input,
+  OnDestroy
+} from '@angular/core'
 import { Router } from '@angular/router'
 import { MatSidenav } from '@angular/material'
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
-import { Observable, BehaviorSubject, combineLatest } from 'rxjs'
+import { Observable, BehaviorSubject, combineLatest, Subscription } from 'rxjs'
 import { map, tap } from 'rxjs/operators'
 import { SideSheetService } from './side-sheet/side-sheet.service'
 
@@ -11,7 +17,7 @@ import { SideSheetService } from './side-sheet/side-sheet.service'
   templateUrl: './scaffold.component.html',
   styleUrls: ['./scaffold.component.scss']
 })
-export class ScaffoldComponent implements AfterContentInit {
+export class ScaffoldComponent implements AfterContentInit, OnDestroy {
   @Input() disableDrawer = false
   @Input() disableSideSheet = false
 
@@ -57,6 +63,10 @@ export class ScaffoldComponent implements AfterContentInit {
     })
 
     this.sideSheetService.close$.subscribe(_ => this.toggleSideSheet())
+  }
+
+  ngOnDestroy() {
+    this.sideSheetService.attach('none')
   }
 
   disableSideSheetOpening() {

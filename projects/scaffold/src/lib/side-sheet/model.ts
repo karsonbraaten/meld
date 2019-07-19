@@ -1,1 +1,1 @@
-export type SideSheetStyle = 'modal' | 'standard'
+export type SideSheetStyle = 'modal' | 'standard' | 'none'
