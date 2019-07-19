@@ -7,6 +7,7 @@ import { ScaffoldModule } from '@ngx-meld/scaffold'
 
 import { AppRoutingModule } from './app-routing.module'
 import { AppComponent } from './app.component'
+import { AuthGuard } from './auth.guard'
 
 @NgModule({
   declarations: [AppComponent],
@@ -17,7 +18,7 @@ import { AppComponent } from './app.component'
     ScaffoldModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

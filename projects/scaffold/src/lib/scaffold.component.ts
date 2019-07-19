@@ -12,8 +12,8 @@ import { SideSheetService } from './side-sheet/side-sheet.service'
   styleUrls: ['./scaffold.component.scss']
 })
 export class ScaffoldComponent implements AfterContentInit {
-  @Input() disableDrawer: boolean = false
-  @Input() disableSideSheet: boolean = false
+  @Input() disableDrawer = false
+  @Input() disableSideSheet = false
 
   @ViewChild('drawer', { static: false }) drawer: MatSidenav
   @ViewChild('modalSideSheet', { static: false }) modalSideSheet: MatSidenav

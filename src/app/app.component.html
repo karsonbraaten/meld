@@ -1,8 +1,22 @@
-<ngx-scaffold>
+<ngx-scaffold *ngIf="user$ | async as user; else unauth">
   <ngx-app-bar-host top
     (filter)="onFilter()"
     (showFilter)="onShowFilter($event)"
     (navigate)="onNavigate($event)">
   </ngx-app-bar-host>
+  <ng-container drawer>
+    <button (click)="onSignOut()">Sign out</button>
+    <ul>
+      <li>
+        <a routerLink="heroes">Heroes</a>
+      </li>
+      <li>
+        <a routerLink="villains">Villains</a>
+      </li>
+    </ul>
+  </ng-container>
   <router-outlet></router-outlet>
 </ngx-scaffold>
+<ng-template #unauth>
+  <router-outlet></router-outlet>
+</ng-template>

@@ -3,11 +3,18 @@ import {
   LocationStrategy,
   PathLocationStrategy
 } from '@angular/common'
-import { Component, ViewChild } from '@angular/core'
+import {
+  Component,
+  ViewChild,
+  ChangeDetectionStrategy,
+  OnInit
+} from '@angular/core'
 import { Router } from '@angular/router'
 
 import { NavigationAction } from '@ngx-meld/app-bar'
 import { ScaffoldComponent } from '@ngx-meld/scaffold'
+import { Observable } from 'rxjs'
+import { AuthService, User } from './auth.service'
 
 @Component({
   providers: [
@@ -16,12 +23,23 @@ import { ScaffoldComponent } from '@ngx-meld/scaffold'
   ],
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
   @ViewChild(ScaffoldComponent, { static: true }) scaffold: ScaffoldComponent
 
-  constructor(private router: Router, private location: Location) {}
+  user$: Observable<User | null>
+
+  constructor(
+    private router: Router,
+    private location: Location,
+    private auth: AuthService
+  ) {}
+
+  ngOnInit() {
+    this.user$ = this.auth.user$
+  }
 
   onFilter() {
     this.scaffold.toggleSideSheet()
@@ -34,6 +52,11 @@ export class AppComponent {
     } else {
       this.scaffold.disableSideSheetOpening()
     }
+  }
+
+  onSignOut() {
+    this.auth.signOut()
+    this.router.navigateByUrl('/login')
   }
 
   onNavigate(action: NavigationAction) {
