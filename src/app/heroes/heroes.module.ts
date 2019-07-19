@@ -1,14 +1,13 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from '@angular/core'
+import { CommonModule } from '@angular/common'
 
-import { HeroesRoutingModule } from './heroes-routing.module';
-import { HeroesComponent } from './heroes.component';
+import { AppBarModule } from '@ngx-meld/app-bar'
+
+import { HeroesRoutingModule } from './heroes-routing.module'
+import { HeroesComponent } from './heroes.component'
 
 @NgModule({
   declarations: [HeroesComponent],
-  imports: [
-    CommonModule,
-    HeroesRoutingModule
-  ]
+  imports: [CommonModule, AppBarModule, HeroesRoutingModule]
 })
-export class HeroesModule { }
+export class HeroesModule {}
