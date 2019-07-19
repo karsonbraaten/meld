@@ -1,11 +1,10 @@
 <ngx-scaffold [disableDrawer]="!(user$ | async)" [disableSideSheet]="!(user$ | async)">
   <ngx-app-bar-host top
-    *ngIf="user$ | async as user; else unauth"
+    *ngIf="user$ | async as user"
     (filter)="onFilter()"
     (showFilter)="onShowFilter($event)"
     (navigate)="onNavigate($event)">
   </ngx-app-bar-host>
-  <ng-template #unauth></ng-template>
   <ng-container drawer>
     <button (click)="onSignOut()">Sign out</button>
     <ul>
