@@ -60,7 +60,6 @@ export class AppBarHostComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    console.log('onDestroy')
     this.filterSub.unsubscribe()
     this.navigateSub.unsubscribe()
     this.showFilterSub.unsubscribe()
