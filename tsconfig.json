@@ -33,6 +33,12 @@
       ],
       "@ngx-meld/app-bar/*": [
         "dist/app-bar/*"
+      ],
+      "@ngx-meld/list": [
+        "dist/list"
+      ],
+      "@ngx-meld/list/*": [
+        "dist/list/*"
       ]
     }
   }

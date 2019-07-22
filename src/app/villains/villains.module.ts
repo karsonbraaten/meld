@@ -5,6 +5,7 @@ import { MatIconModule } from '@angular/material/icon'
 import { MatListModule } from '@angular/material/list'
 
 import { AppBarModule } from '@ngx-meld/app-bar'
+import { ListModule } from '@ngx-meld/list'
 import { ScaffoldModule } from '@ngx-meld/scaffold'
 
 import { VillainsRoutingModule } from './villains-routing.module'
@@ -18,6 +19,7 @@ import { VillainsComponent } from './villains.component'
     MatIconModule,
     MatListModule,
     AppBarModule,
+    ListModule,
     ScaffoldModule,
     VillainsRoutingModule
   ]
