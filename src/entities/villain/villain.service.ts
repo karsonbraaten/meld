@@ -16,6 +16,7 @@ export class VillainService {
 
 const villains: Villain[] = [
   {
+    id: 1,
     name: 'Chameleon',
     alter_ego: 'Dmitri Anatoly Nikolayevich Smerdyakov',
     first_appearance: '#1 (March 1963)[3][9]',
@@ -23,6 +24,7 @@ const villains: Villain[] = [
     description: 'Master of disguise. Can make himself look like anybody.[3][9]'
   },
   {
+    id: 1,
     name: 'Vulture',
     alter_ego: 'Adrian Toomes, Blackie Drago',
     first_appearance: '#2 (May 1963)[10][11]',
@@ -31,6 +33,7 @@ const villains: Villain[] = [
       'An inventor that created mechanical wings that he harnessed to himself to let him fly and have superhuman strength.[13]'
   },
   {
+    id: 1,
     name: 'Tinkerer',
     alter_ego: 'Phineas Mason',
     first_appearance: '#2 (May 1963)[14]',
@@ -39,6 +42,7 @@ const villains: Villain[] = [
       'Gifted in engineering and creating gadgets from just about anything.[15]'
   },
   {
+    id: 1,
     name: 'Doctor Octopus',
     alter_ego: 'Doctor Otto Gunther Octavius',
     first_appearance: '#3 (July 1963)[9]',
@@ -47,6 +51,7 @@ const villains: Villain[] = [
       'Originally a scientist whose invention of metallic limbs had become fused to his body by an accident which caused his insanity. He has telepathic control of these arms and they are strong enough to physically hurt Spider-Man when Octavius controls them.[18]'
   },
   {
+    id: 1,
     name: 'Sandman',
     alter_ego: 'William Baker / Flint Marko',
     first_appearance: '#4 (September 1963)[19][20]',
@@ -55,6 +60,7 @@ const villains: Villain[] = [
       'After bathed in a nuclear reaction. His body is formed with sand which is depicted that he can manipulate in many ways such as shapeshifting and increasing his density and strength to lift up to 85 tons along with increasing height, turning his hands into weapons such as hammer or a mace along with being able form a near-impenetrable wall of sand or create a dust storm.[21]'
   },
   {
+    id: 1,
     name: 'Lizard',
     alter_ego: 'Dr. Curt Connors',
     first_appearance: '#6 (November 1963)[22][23][24]',
@@ -63,6 +69,7 @@ const villains: Villain[] = [
       'Dr. Curt Connors tested himself an experimental serum from reptile DNA which created him as a giant humanoid Lizard. As the Lizard he has regeneration abilities. Along with superhuman strength, speed and agility. He can also telepathically command all reptiles within a one-mile radius.[25]'
   },
   {
+    id: 1,
     name: 'Living Brain',
     alter_ego: 'Living Brain',
     first_appearance: '#8 (January 1964)[27]',
@@ -70,6 +77,7 @@ const villains: Villain[] = [
     description: 'A living robot that is designed to solve any problem.[27]'
   },
   {
+    id: 1,
     name: 'Electro',
     alter_ego: 'Maxwell Dillon',
     first_appearance: '#9 (February 1964)[28][29]',
@@ -78,6 +86,7 @@ const villains: Villain[] = [
       'As a lineman for an electric company, he was repairing a power line and holding a wire when lightning struck and mutated his nervous system making him a living electrical capacitor. He gained the power of electric mutation such as shooting up to one million volts of electricity from his fingertips. He also has superhuman strength and is fast when his body is charged and can glide over power lines along with even riding lightning bolts.[31]'
   },
   {
+    id: 1,
     name: 'Big Man',
     alter_ego: 'Frederick Foswell, Janice Foswell',
     first_appearance: '#10 (March 1964) [32]',
@@ -85,6 +94,7 @@ const villains: Villain[] = [
     description: 'A notorious crime lord of New York City.[32]'
   },
   {
+    id: 1,
     name: 'Mysterio',
     alter_ego: 'Quentin Beck',
     first_appearance: '#13 (June 1964)[33][34]',
@@ -93,6 +103,7 @@ const villains: Villain[] = [
       'Uses special effects that makes him a master of illusion. Also knows hypnosis. Can use combat that he learned from being a stuntman. Has knowledge of robotics and chemistry.[34]'
   },
   {
+    id: 1,
     name: 'Green Goblin',
     alter_ego: 'Norman OsbornArch, Harry Osborn[37][38]',
     first_appearance: '#14 (July 1964)[36]',
@@ -101,6 +112,7 @@ const villains: Villain[] = [
       'The first Green Goblin is Norman Osborn, the CEO of Oscorp. He has Powers that derive from a "Goblin formula" that increase agility, endurance strength and reflexes to superhuman levels. The formula has also advances the intelligence but with a side effect of insanity. Has many weapons that Norman Osborn originally created. Such as glider to fly with and pumpkin bombs to throw.[36]'
   },
   {
+    id: 1,
     name: 'Kraven the Hunter',
     alter_ego:
       'Sergei Kravinoff, Alyosha Kravinoff (son), Ana Kravinoff (daughter)',
@@ -110,6 +122,7 @@ const villains: Villain[] = [
       "Depicted as the world's greatest big-game hunter, Kraven the Hunter is the stepbrother of Chameleon. Prefers using his bare hands instead of guns. Uses preparation along with magic jungle potion which helps with speed, strength and game tracking.[41]"
   },
   {
+    id: 1,
     name: 'Scorpion',
     alter_ego: 'Mac Gargan8',
     first_appearance: '#20 (January 1965)',
@@ -118,6 +131,7 @@ const villains: Villain[] = [
       "A former private investigator. Endured a test that made him more powerful than Spider-Man but also insane. It gave him superhuman strength of a scorpion. He was then provided with a scorpion themed suit and weaponry (such as a tail which evolved from a simple club tail to a scythe-like spike capable of shooting lasers, acid among other projectiles). Gargan also gained power when switching to the Scorpion to being one of the characters known as Venom. See Venom's power and abilities below to see that power.[43][44]"
   },
   {
+    id: 1,
     name: 'Spencer Smythe / Spider-Slayers',
     alter_ego: 'Spencer Smythe Spider-Slayers: Multiple names',
     first_appearance: '#25 (June 1965)[32]',
@@ -125,6 +139,7 @@ const villains: Villain[] = [
     description: 'A robotic expert who created the Spider-Slayers.'
   },
   {
+    id: 1,
     name: 'Crime Master',
     alter_ego: 'Various',
     first_appearance: '#26 (July 1965)[32]',
@@ -133,6 +148,7 @@ const villains: Villain[] = [
       'A professional criminal who was the alias of different people.'
   },
   {
+    id: 1,
     name: 'Molten Man',
     alter_ego: 'Mark Raxton[46]',
     first_appearance: '#28 (September 1965)[47]',
@@ -141,6 +157,7 @@ const villains: Villain[] = [
       'A scientist who was covered in a liquid metallic alloy that not only gives him super-strength, but also enabled him to generate heat and radiation.'
   },
   {
+    id: 1,
     name: 'Looter',
     alter_ego: 'Norton G. Fester',
     first_appearance: '#36 (May 1966)[47]',
@@ -148,6 +165,7 @@ const villains: Villain[] = [
     description: 'A poor scientist who gains superpowers from meteor gas.'
   },
   {
+    id: 1,
     name: 'Robot Master / Gaunt',
     alter_ego: 'Mendel Stromm',
     first_appearance: '#37 (June 1966)[32][50]',
@@ -156,6 +174,7 @@ const villains: Villain[] = [
       'A former college teacher and partner of Norman Osborn that became a cyborg after being betrayed by Osborn.'
   },
   {
+    id: 1,
     name: 'Rhino9',
     alter_ego: 'Aleksei Mikhailovich Sytsevich',
     first_appearance: '#41 (October 1966)[51]',
@@ -164,6 +183,7 @@ const villains: Villain[] = [
       'Although classified as a fictional villain famous for being dimwitted.[52] He has superhuman strength with a rhinoceros modeled armor when undergoing a chemical and radiation treatment which would transform him as being a collective of professional spies.[53]'
   },
   {
+    id: 1,
     name: 'Shocker',
     alter_ego: 'Herman Schultz',
     first_appearance: '#46 (March 1967)[43][54]',
@@ -172,6 +192,7 @@ const villains: Villain[] = [
       'Wears a battle suit that contains vibro-shock gauntlets.[43][55]'
   },
   {
+    id: 1,
     name: 'Kingpin',
     alter_ego: 'Wilson Fisk',
     first_appearance: '#50(July 1967) ("Spider-Man No More!")[56][57]',
@@ -180,6 +201,7 @@ const villains: Villain[] = [
       'Depicted as crime lord of New York City. Manipulate henchman to do his bidding. His body consists of mostly muscle (despite looking like he is obese) that has much strength and agility. Enough to grapple and hammer Spider-Man.[59][60]'
   },
   {
+    id: 1,
     name: 'The Finisher',
     alter_ego: 'Karl Fiers',
     first_appearance: 'Annual #5 (November 1968)[61]',
@@ -187,6 +209,7 @@ const villains: Villain[] = [
     description: ''
   },
   {
+    id: 1,
     name: 'Man Mountain Marko',
     alter_ego: 'Michael Marko',
     first_appearance: '#73 (June 1969)[32]',
@@ -194,6 +217,7 @@ const villains: Villain[] = [
     description: 'A mob lieutenant with super-strength'
   },
   {
+    id: 1,
     name: 'Silvermane',
     alter_ego: 'Silvio Manfredi',
     first_appearance: '#73 (June 1969)[64]',
@@ -201,6 +225,7 @@ const villains: Villain[] = [
     description: 'An aging crime boss.'
   },
   {
+    id: 1,
     name: 'Kangaroo',
     alter_ego: 'Frank Oliver[66], Brian Hibbs',
     first_appearance: '#81 (February 1970)[32]',
@@ -208,6 +233,7 @@ const villains: Villain[] = [
     description: 'A name given to two kangaroo-themed villains.'
   },
   {
+    id: 1,
     name: 'Schemer',
     alter_ego: 'Richard Fisk',
     first_appearance: '#83 (April 1970)',
@@ -215,6 +241,7 @@ const villains: Villain[] = [
     description: 'The son of Kingpin.'
   },
   {
+    id: 1,
     name: 'Morbius',
     alter_ego: 'Michael Morbius',
     first_appearance: '#101 (October 1971)11[69]',
@@ -222,6 +249,7 @@ const villains: Villain[] = [
     description: 'Has the power of a vampire along with their weaknesses.[67]'
   },
   {
+    id: 1,
     name: 'Gog',
     alter_ego: 'N/A',
     first_appearance: '#103 (December 1971)[32]',
@@ -229,6 +257,7 @@ const villains: Villain[] = [
     description: ''
   },
   {
+    id: 1,
     name: 'Gibbon',
     alter_ego: 'Martin Blank',
     first_appearance: '#110 (July 1972)[32]',
@@ -236,6 +265,7 @@ const villains: Villain[] = [
     description: 'A lesser criminal with gibbon-like abilities.'
   },
   {
+    id: 1,
     name: 'Hammerhead',
     alter_ego: 'Joseph (full name unknown)[73]',
     first_appearance: '#113 (October  1972)[74]',
@@ -244,6 +274,7 @@ const villains: Villain[] = [
       'An amnesica gangster whose skull was replaced with an unbendable steel alloy.'
   },
   {
+    id: 1,
     name: 'Man-Wolf',
     alter_ego: 'John Jameson',
     first_appearance: '#124 (September 1973).[32]',
@@ -252,6 +283,7 @@ const villains: Villain[] = [
       'When exposed to the Godstone, John Jameson transforms into the werewolf-like creature Man-Wolf.'
   },
   {
+    id: 1,
     name: 'Jackal',
     alter_ego: 'Miles Warren',
     first_appearance: '#129 (February 1974)12[77]',
@@ -260,6 +292,7 @@ const villains: Villain[] = [
       'Brilliant professor with the knowledge of cloning and using it to torment Spider-Man emotionally.[67]'
   },
   {
+    id: 1,
     name: 'Tarantula',
     alter_ego: 'Various',
     first_appearance: '#134 (July 1974)[32][64]',
@@ -267,6 +300,7 @@ const villains: Villain[] = [
     description: 'A name given to different tarantula-themed villains.'
   },
   {
+    id: 1,
     name: 'Mindworm',
     alter_ego: 'William Turner',
     first_appearance: '#138 (November 1974)',
@@ -274,6 +308,7 @@ const villains: Villain[] = [
     description: 'A superhuman with telepathic powers.'
   },
   {
+    id: 1,
     name: 'Grizzly',
     alter_ego: 'Maxwell Markham',
     first_appearance: '#139 (December 1974)[80]',
@@ -282,6 +317,7 @@ const villains: Villain[] = [
       'An ex-professional wrestler that wears a grizzly bear-themed outfit.'
   },
   {
+    id: 1,
     name: 'Human Fly',
     alter_ego: 'Richard Deacon',
     first_appearance: 'Annual #10[81] (1976)',
@@ -290,6 +326,7 @@ const villains: Villain[] = [
       'A criminal that was imprinted with the genetic code of a housefly.'
   },
   {
+    id: 1,
     name: "Will o' the Wisp",
     alter_ego: 'Jackson Arvad',
     first_appearance: '#167 (April 1977)',
@@ -297,6 +334,7 @@ const villains: Villain[] = [
     description: 'A former Roxxon employee who can manipulate his molecules.'
   },
   {
+    id: 1,
     name: 'Big Wheel',
     alter_ego: 'Jackson Wheele[66]',
     first_appearance: '#182 (July 1978)[32]',
@@ -304,6 +342,7 @@ const villains: Villain[] = [
     description: 'A criminal that rides the Big Wheel vehicle.'
   },
   {
+    id: 1,
     name: 'Black Cat',
     alter_ego: 'Felicia Hardy',
     first_appearance: '#194 (July 1979)[82]',
@@ -312,6 +351,7 @@ const villains: Villain[] = [
       'Expert burglary skills taught by her father along with carrying a grappling hook for swinging on rooftops.[1] Had bad luck powers off and on.[83]'
   },
   {
+    id: 1,
     name: 'Calypso',
     alter_ego: 'Calypso Ezili',
     first_appearance: '#209 (October 1980)',
@@ -319,6 +359,7 @@ const villains: Villain[] = [
     description: 'A voodoo accomplice of Kraven the Hunter.'
   },
   {
+    id: 1,
     name: 'Hydro-Man',
     alter_ego: 'Morris Bench',
     first_appearance: '#212 (January 10, 1981)[85][86]',
@@ -327,6 +368,7 @@ const villains: Villain[] = [
       "A former crewman who gained aquakinetic abilities following an accident during Spider-Man's fight with Namor."
   },
   {
+    id: 1,
     name: 'Hobgoblin',
     alter_ego: 'Roderick Kingsley, Jason Macendale, Phil Urich[68][87]',
     first_appearance: '#238 (March 1983)',
@@ -335,6 +377,7 @@ const villains: Villain[] = [
       "Powers similar to Green Goblin after discovering Norman's lair. Perfecting Green Goblin's strength portion, goblin glider and pumpkin bombs without the insanity that Norman had.[89][91][92]"
   },
   {
+    id: 1,
     name: 'Rose',
     alter_ego: 'Richard Fisk',
     first_appearance: '#253 (June 1984)[84]',
@@ -343,6 +386,7 @@ const villains: Villain[] = [
       "The alias of a gentleman-like crime lord with the alias used by different people including Kingpin's son Richard Fisk."
   },
   {
+    id: 1,
     name: 'Alistair Smythe',
     alter_ego: 'Alistair Smythe[92]',
     first_appearance: 'Annual #19 (November 1985)[95][96]',
@@ -350,6 +394,7 @@ const villains: Villain[] = [
     description: 'The son of Spencer Smythe.'
   },
   {
+    id: 1,
     name: 'Slyde',
     alter_ego: 'Jalome Beacher',
     first_appearance: '#272 (January 1986)[97]',
@@ -358,6 +403,7 @@ const villains: Villain[] = [
       'A chemist whose suit allow him to move at nearly 30 miles per hour (48 km/h). He is almost impossible to grasp and he is incredibly maneuverable'
   },
   {
+    id: 1,
     name: 'Venom',
     alter_ego: 'Eddie BrockArch, Mac Gargan',
     first_appearance: '#30015[8][98]',
@@ -366,6 +412,7 @@ const villains: Villain[] = [
       "The symbiote that once merged with Spider-Man as a suit mimics and enhances the abilities of Spider-Man once bonded with Eddie.[99] Also he is undetectable to Spider-Man's spider sense.[100]"
   },
   {
+    id: 1,
     name: 'Styx and Stone',
     alter_ego: 'Jacob Eishorn and Gerald Stone',
     first_appearance: '#309 (November 1988)[101]',
@@ -374,6 +421,7 @@ const villains: Villain[] = [
       'A mad scientist and homeless man duo who fought Spider-Man. Styx has a disintegrating touch. Stone had two-large weapons on his shoulders and was later mutated into a golem-like creature.'
   },
   {
+    id: 1,
     name: 'Carnage',
     alter_ego: 'Cletus Kasady',
     first_appearance: '#361 (April 1992)[102]16',
@@ -382,6 +430,7 @@ const villains: Villain[] = [
       "Being an offspring of Venom. Carnage is an even stronger and more powerful character than Venom with his symbiotic powers. He can shapeshift himself such as creating sharp weapons with his symbiote body. He can also plant ideas in people's heads.[102]"
   },
   {
+    id: 1,
     name: 'Black Tarantula',
     alter_ego: 'Carlos LaMuerto',
     first_appearance: '#419 (January 1997)[50]',
@@ -389,6 +438,7 @@ const villains: Villain[] = [
     description: 'A tarantula-themed martial artist.'
   },
   {
+    id: 1,
     name: 'Morlun',
     alter_ego: 'N/',
     first_appearance: 'vol. 2 #30 (June 2001)[78]',
@@ -397,6 +447,7 @@ const villains: Villain[] = [
       'A member of the Inheritors who can drain the life force out of totems.'
   },
   {
+    id: 1,
     name: 'Shathra',
     alter_ego: '???',
     first_appearance: 'vol. 2 #46 (December 2006)',
@@ -404,6 +455,7 @@ const villains: Villain[] = [
     description: 'An insectoid creature from the Astral Plane.'
   },
   {
+    id: 1,
     name: 'Grey Goblin',
     alter_ego: 'Gabriel Stacy, Lily Hollister (Menace)[72]',
     first_appearance: '#509 (August 2004), #550 (April 2008) (Menace)[106]',
@@ -412,6 +464,7 @@ const villains: Villain[] = [
       'A gray-resembling Green Goblin whose alias was used by different people.'
   },
   {
+    id: 1,
     name: 'Mister Negative',
     alter_ego: 'Martin Li',
     first_appearance: '#546 (January 2008) (full appearance)[107]',
@@ -420,6 +473,7 @@ const villains: Villain[] = [
       'The leader of the Inner Demons who is able to switch between reversed and regular appearance'
   },
   {
+    id: 1,
     name: 'Overdrive',
     alter_ego: '???',
     first_appearance: 'Swing Shift (May 2007)[108]',
@@ -428,6 +482,7 @@ const villains: Villain[] = [
       'A supervillain who can convert any vehicle into a high-powered one.'
   },
   {
+    id: 1,
     name: 'Screwball',
     alter_ego: '???',
     first_appearance: '#559 (May 2008)',
@@ -435,6 +490,7 @@ const villains: Villain[] = [
     description: 'The world\'s first "live streaming super-villain"'
   },
   {
+    id: 1,
     name: 'Massacre',
     alter_ego: 'Marcus Lyman',
     first_appearance: '#655 (April 2011)[111][112][113]',
@@ -442,6 +498,7 @@ const villains: Villain[] = [
     description: 'A brain-damaged criminal who lacks emotions.'
   },
   {
+    id: 1,
     name: 'Panda-Mania',
     alter_ego: '???',
     first_appearance: 'Vol. 3 #1',

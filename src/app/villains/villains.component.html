@@ -20,7 +20,7 @@
 </ngx-app-bar>
 <side-sheet [titleText]="'Filters'">
 </side-sheet>
-<ngx-list></ngx-list>
+<ngx-list [displayWith]="displayWith" [items]="villains$ | async"></ngx-list>
 <mat-selection-list #list>
   <mat-list-option
   *ngFor="let villain of villains$ | async"

@@ -4,6 +4,7 @@ import { MatListOption } from '@angular/material'
 import { Observable } from 'rxjs'
 
 import { Villain, VillainService } from '@entities/villain'
+import { ListItem } from '@ngx-meld/list'
 
 @Component({
   templateUrl: './villains.component.html',
@@ -21,6 +22,13 @@ export class VillainsComponent implements OnInit {
 
   ngOnInit() {
     this.villains$ = this.villainService.list()
+  }
+
+  displayWith(villain: Villain): ListItem {
+    return {
+      title: villain.name,
+      link: `${villain.id}`
+    }
   }
 
   onDelete(options: MatListOption[]) {

@@ -10,6 +10,11 @@ const routes: Routes = [
     component: VillainsComponent
   },
   {
+    path: ':id',
+    loadChildren: () =>
+      import('./villain/villain.module').then(m => m.VillainModule)
+  },
+  {
     path: 'new',
     loadChildren: () =>
       import('./villains-new/villains-new.module').then(
