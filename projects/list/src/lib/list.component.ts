@@ -1,19 +1,20 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core'
+
+export interface ListItem {
+  title: string
+  link?: string
+}
 
 @Component({
   selector: 'ngx-list',
-  template: `
-    <p>
-      list works!
-    </p>
-  `,
-  styles: []
+  templateUrl: './list.component.html',
+  styleUrls: ['./list.component.scss']
 })
-export class ListComponent implements OnInit {
+export class ListComponent<T> implements OnInit {
+  @Input() displayWith: (value: T) => ListItem
+  @Input() items: T[]
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

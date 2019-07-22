@@ -1,0 +1,7 @@
+<mat-nav-list>
+    <ng-container *ngFor="let item of items">
+        <a mat-list-item *ngIf="displayWith(item) as li" [routerLink]="li.link">
+            {{ li.title }}
+        </a>
+    </ng-container>
+</mat-nav-list>
