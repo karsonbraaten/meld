@@ -14,6 +14,6 @@ export class LoginComponent implements OnInit {
 
   onSignIn() {
     this.auth.signIn('karsonbraaten@gmail.com')
-    this.router.navigateByUrl('/heroes')
+    this.router.navigateByUrl('/villains')
   }
 }
