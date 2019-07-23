@@ -3,6 +3,7 @@
         <ng-container *ngFor="let item of items">
             <a mat-list-item *ngIf="displayWith(item) as li" [routerLink]="li.link">
                 <mat-checkbox
+                    *ngIf="!disableSelection"
                     [value]="item"
                     (change)="onCheckboxChange($event)"
                     (click)="$event.stopPropagation()">
