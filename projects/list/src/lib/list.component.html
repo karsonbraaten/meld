@@ -1,22 +1,63 @@
-<ng-container *ngIf="mode$ | async as mode">
-    <mat-nav-list *ngIf="mode === 'nav'">
-        <ng-container *ngFor="let item of items">
-            <a mat-list-item *ngIf="displayWith(item) as li" [routerLink]="li.link">
-                <mat-checkbox
-                    *ngIf="!disableSelection"
-                    [value]="item"
-                    (change)="onCheckboxChange($event)"
-                    (click)="$event.stopPropagation()">
-                </mat-checkbox>
-                {{ li.title }}
-            </a>
+<ng-container *ngIf="view$ | async as view">
+    <ng-container *ngIf="view === 'list'; else table">
+        <ng-container *ngIf="mode$ | async as mode">
+            <mat-nav-list *ngIf="mode === 'nav'">
+                <ng-container *ngFor="let item of items">
+                    <a mat-list-item *ngIf="displayWith(item) as li" [routerLink]="li.link">
+                        <mat-checkbox
+                            *ngIf="!disableSelection"
+                            [value]="item"
+                            (change)="onCheckboxChange($event)"
+                            (click)="$event.stopPropagation()">
+                        </mat-checkbox>
+                        {{ li.title }}
+                    </a>
+                </ng-container>
+            </mat-nav-list>
+            <mat-selection-list *ngIf="mode === 'select'" [formControl]="selectionControl">
+                <ng-container *ngFor="let item of items">
+                    <mat-list-option *ngIf="displayWith(item) as li" [checkboxPosition]="'before'" [value]="item">
+                        {{ li.title }}
+                    </mat-list-option>
+                </ng-container>
+            </mat-selection-list>
         </ng-container>
-    </mat-nav-list>
-    <mat-selection-list *ngIf="mode === 'select'" [formControl]="selectionControl">
-        <ng-container *ngFor="let item of items">
-            <mat-list-option *ngIf="displayWith(item) as li" [checkboxPosition]="'before'" [value]="item">
-                {{ li.title }}
-            </mat-list-option>
-        </ng-container>
-    </mat-selection-list>
+    </ng-container>
+    <ng-template #table>
+        <table mat-table [dataSource]="dataSource">
+            <ng-container matColumnDef="select">
+                <th mat-header-cell *matHeaderCellDef>
+                    <mat-checkbox
+                    (change)="$event ? masterToggle() : null"
+                    [checked]="selectionModel.hasValue() && isAllSelected()"
+                    [indeterminate]="selectionModel.hasValue() && !isAllSelected()"
+                    >
+                    </mat-checkbox>
+                </th>
+                <td mat-cell *matCellDef="let row">
+                    <mat-checkbox
+                        (click)="$event.stopPropagation()"
+                        (change)="$event ? selectionModel.toggle(row) : null"
+                        [checked]="selectionModel.isSelected(row)">
+                    </mat-checkbox>
+                </td>
+            </ng-container>
+            <ng-container *ngFor="let column of columns; first as isFirst" [matColumnDef]="column">
+                <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
+                <td mat-cell *matCellDef="let item">
+                    <a
+                        *ngIf="isFirst; else plain"
+                        [routerLink]="displayWith(item).link"
+                        (click)="$event.stopPropagation()">
+                        {{ item[column] | titlecase }}
+                    </a>
+                    <ng-template #plain>
+                        {{ item[column] | titlecase }}
+                    </ng-template>
+                </td>
+            </ng-container>
+            <tr mat-header-row *matHeaderRowDef="allColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: allColumns" (click)="onRowClick(row)"></tr>
+        </table>
+    </ng-template>
 </ng-container>

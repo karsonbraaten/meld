@@ -20,7 +20,7 @@
 </ngx-app-bar>
 <side-sheet [titleText]="'Filters'">
 </side-sheet>
-<ngx-list #list [displayWith]="displayWith" [items]="villains$ | async"></ngx-list>
+<ngx-list #list [displayWith]="displayWith" [items]="villains$ | async" [columns]="['name', 'alter_ego']"></ngx-list>
 <a mat-fab class="fab" [routerLink]="['new']">
   <mat-icon>add</mat-icon>
 </a>
