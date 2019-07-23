@@ -7,13 +7,12 @@ import {
   OnChanges,
   SimpleChanges
 } from '@angular/core'
-import { FormBuilder, Validators } from '@angular/forms'
 import { SelectionModel } from '@angular/cdk/collections'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
 import { MatCheckboxChange } from '@angular/material/checkbox'
 import { MatTableDataSource } from '@angular/material/table'
 import { Observable } from 'rxjs'
-import { startWith, map } from 'rxjs/operators'
+import { map } from 'rxjs/operators'
 
 export interface ListItem {
   title: string
@@ -21,7 +20,6 @@ export interface ListItem {
   link?: string
 }
 
-type ListMode = 'select' | 'nav'
 type ListView = 'list' | 'table'
 
 @Component({
@@ -31,25 +29,17 @@ type ListView = 'list' | 'table'
   styleUrls: ['./list.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ListComponent<T> implements OnChanges, OnInit, OnDestroy {
+export class ListComponent<T> implements OnChanges, OnInit {
   @Input() disableSelection = false
   @Input() displayWith: (value: T) => ListItem
   @Input() columns: (Extract<keyof T, string>)[] = [] // TODO: @Input() fields replace columns and items
   @Input() items: T[]
 
-  mode$: Observable<ListMode>
   view$: Observable<ListView>
   dataSource = new MatTableDataSource<T>([])
-  selectionControl = this.fb.control([], Validators.required)
   selectionModel = new SelectionModel<T>(true, [])
-  private subscription = this.selectionModel.changed.subscribe(change =>
-    this.selectionControl.setValue(change.source.selected)
-  )
 
-  constructor(
-    private fb: FormBuilder,
-    private breakpointObserver: BreakpointObserver
-  ) {}
+  constructor(private breakpointObserver: BreakpointObserver) {}
 
   ngOnChanges({ items: { currentValue } }: SimpleChanges) {
     if (currentValue) {
@@ -58,18 +48,9 @@ export class ListComponent<T> implements OnChanges, OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.mode$ = this.selectionControl.statusChanges.pipe(
-      startWith('INVALID'),
-      map(status => (status === 'VALID' ? 'select' : 'nav'))
-    )
-
     this.view$ = this.breakpointObserver
       .observe(Breakpoints.XSmall)
       .pipe(map(({ matches }) => (matches ? 'list' : 'table')))
-  }
-
-  ngOnDestroy() {
-    this.subscription.unsubscribe()
   }
 
   masterToggle() {
@@ -101,7 +82,7 @@ export class ListComponent<T> implements OnChanges, OnInit, OnDestroy {
   }
 
   get selected(): T[] {
-    return this.selectionControl.value
+    return this.selectionModel.selected
   }
 
   onCheckboxChange({ source: { value } }: MatCheckboxChange) {

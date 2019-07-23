@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common'
 import { NgModule } from '@angular/core'
-import { ReactiveFormsModule } from '@angular/forms'
 import { LayoutModule } from '@angular/cdk/layout'
 import { RouterModule } from '@angular/router'
 import { MatCheckboxModule } from '@angular/material/checkbox'
@@ -13,7 +12,6 @@ import { ListComponent } from './list.component'
   declarations: [ListComponent],
   imports: [
     CommonModule,
-    ReactiveFormsModule,
     RouterModule,
     LayoutModule,
     MatCheckboxModule,
