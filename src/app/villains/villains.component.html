@@ -1,34 +1,26 @@
 <ngx-app-bar
-    [state]="list.selectedOptions.selected.length > 0 ? 'contextual' : 'regular'"
-    [filterIcon]="true"
-    [searchIcon]="true"
-    (dismiss)="list.selectedOptions.clear()"
-    (searchExpand)="onSearchExpand()">
+  [filterIcon]="true"
+  [searchIcon]="true"
+  [state]="list.selected.length > 0 ? 'contextual' : 'regular'"
+  (dismiss)="list.clear()"
+  (searchExpand)="onSearchExpand()">
     <h1 appBarTitle>Villains</h1>
-    <h1 contextualTitle>{{ list.selectedOptions.selected.length }} selected</h1>
+    <h1 contextualTitle>{{ list.selected.length }} selected</h1>
     <ng-container contextualActions>
         <button mat-icon-button>
           <mat-icon>share</mat-icon>
         </button>
-        <button mat-icon-button (click)="onDelete(list.selectedOptions.selected)">
+        <button mat-icon-button (click)="onDelete(list.selected)">
           <mat-icon>delete</mat-icon>
         </button>
         <button mat-icon-button>
           <mat-icon>more_vert</mat-icon>
         </button>
-      </ng-container>
+    </ng-container>
 </ngx-app-bar>
 <side-sheet [titleText]="'Filters'">
 </side-sheet>
-<ngx-list [displayWith]="displayWith" [items]="villains$ | async"></ngx-list>
-<mat-selection-list #list>
-  <mat-list-option
-  *ngFor="let villain of villains$ | async"
-  checkboxPosition="before"
-  [value]="villain">
-  <p matLine>{{ villain.name }}</p>
-</mat-list-option>
-</mat-selection-list>
+<ngx-list #list [displayWith]="displayWith" [items]="villains$ | async"></ngx-list>
 <a mat-fab class="fab" [routerLink]="['new']">
   <mat-icon>add</mat-icon>
 </a>

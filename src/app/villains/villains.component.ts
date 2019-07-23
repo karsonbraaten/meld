@@ -1,6 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
-import { MatListOption } from '@angular/material'
 import { Observable } from 'rxjs'
 
 import { Villain, VillainService } from '@entities/villain'
@@ -31,8 +30,7 @@ export class VillainsComponent implements OnInit {
     }
   }
 
-  onDelete(options: MatListOption[]) {
-    const villains: Villain[] = options.map(({ value }) => value)
+  onDelete(villains: Villain[]) {
     console.log('delete', villains)
   }
 
