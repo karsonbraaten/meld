@@ -16,7 +16,8 @@ export class VillainsComponent implements OnInit {
 
   columns: Column<Villain>[] = [
     'name',
-    { title: 'Alter Ego', key: 'alter_ego' }
+    { title: 'Alter Ego', key: 'alter_ego' },
+    'creator'
   ]
 
   constructor(
