@@ -20,7 +20,7 @@ const villains: Villain[] = [
     name: 'Chameleon',
     alter_ego: 'Dmitri Anatoly Nikolayevich Smerdyakov',
     first_appearance: '#1 (March 1963)[3][9]',
-    creator: 'Stan Lee[3][9], Steve Ditko[3][9]',
+    creator: 'Stan Lee, Steve Ditko',
     description: 'Master of disguise. Can make himself look like anybody.[3][9]'
   },
   {
@@ -28,7 +28,7 @@ const villains: Villain[] = [
     name: 'Vulture',
     alter_ego: 'Adrian Toomes, Blackie Drago',
     first_appearance: '#2 (May 1963)[10][11]',
-    creator: 'Stan Lee[10][12], Steve Ditko[10]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'An inventor that created mechanical wings that he harnessed to himself to let him fly and have superhuman strength.[13]'
   },
@@ -37,7 +37,7 @@ const villains: Villain[] = [
     name: 'Tinkerer',
     alter_ego: 'Phineas Mason',
     first_appearance: '#2 (May 1963)[14]',
-    creator: 'Stan Lee, [15] Steve Ditko[15]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'Gifted in engineering and creating gadgets from just about anything.[15]'
   },
@@ -46,7 +46,7 @@ const villains: Villain[] = [
     name: 'Doctor Octopus',
     alter_ego: 'Doctor Otto Gunther Octavius',
     first_appearance: '#3 (July 1963)[9]',
-    creator: 'Stan Lee[16][17], Steve Ditko[16][17]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'Originally a scientist whose invention of metallic limbs had become fused to his body by an accident which caused his insanity. He has telepathic control of these arms and they are strong enough to physically hurt Spider-Man when Octavius controls them.[18]'
   },
@@ -55,7 +55,7 @@ const villains: Villain[] = [
     name: 'Sandman',
     alter_ego: 'William Baker / Flint Marko',
     first_appearance: '#4 (September 1963)[19][20]',
-    creator: 'Stan Lee[19][20], Steve Ditko[19][20]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'After bathed in a nuclear reaction. His body is formed with sand which is depicted that he can manipulate in many ways such as shapeshifting and increasing his density and strength to lift up to 85 tons along with increasing height, turning his hands into weapons such as hammer or a mace along with being able form a near-impenetrable wall of sand or create a dust storm.[21]'
   },
@@ -64,7 +64,7 @@ const villains: Villain[] = [
     name: 'Lizard',
     alter_ego: 'Dr. Curt Connors',
     first_appearance: '#6 (November 1963)[22][23][24]',
-    creator: 'Stan Lee[22][23][24], Steve Ditko[22][23][24]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'Dr. Curt Connors tested himself an experimental serum from reptile DNA which created him as a giant humanoid Lizard. As the Lizard he has regeneration abilities. Along with superhuman strength, speed and agility. He can also telepathically command all reptiles within a one-mile radius.[25]'
   },
@@ -73,7 +73,7 @@ const villains: Villain[] = [
     name: 'Living Brain',
     alter_ego: 'Living Brain',
     first_appearance: '#8 (January 1964)[27]',
-    creator: 'Stan Lee[27], Steve Ditko[27]',
+    creator: 'Stan Lee, Steve Ditko',
     description: 'A living robot that is designed to solve any problem.[27]'
   },
   {
@@ -81,7 +81,7 @@ const villains: Villain[] = [
     name: 'Electro',
     alter_ego: 'Maxwell Dillon',
     first_appearance: '#9 (February 1964)[28][29]',
-    creator: 'Stan Lee[30],  Steve Ditko[30]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'As a lineman for an electric company, he was repairing a power line and holding a wire when lightning struck and mutated his nervous system making him a living electrical capacitor. He gained the power of electric mutation such as shooting up to one million volts of electricity from his fingertips. He also has superhuman strength and is fast when his body is charged and can glide over power lines along with even riding lightning bolts.[31]'
   },
@@ -90,7 +90,7 @@ const villains: Villain[] = [
     name: 'Big Man',
     alter_ego: 'Frederick Foswell, Janice Foswell',
     first_appearance: '#10 (March 1964) [32]',
-    creator: 'Stan Lee[32], Steve Ditko[32]',
+    creator: 'Stan Lee, Steve Ditko',
     description: 'A notorious crime lord of New York City.[32]'
   },
   {
@@ -98,7 +98,7 @@ const villains: Villain[] = [
     name: 'Mysterio',
     alter_ego: 'Quentin Beck',
     first_appearance: '#13 (June 1964)[33][34]',
-    creator: 'Stan Lee[33][35], Steve Ditko[33][35]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'Uses special effects that makes him a master of illusion. Also knows hypnosis. Can use combat that he learned from being a stuntman. Has knowledge of robotics and chemistry.[34]'
   },
@@ -107,7 +107,7 @@ const villains: Villain[] = [
     name: 'Green Goblin',
     alter_ego: 'Norman OsbornArch, Harry Osborn[37][38]',
     first_appearance: '#14 (July 1964)[36]',
-    creator: 'Stan Lee[36][39], Steve Ditko[36][39]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       'The first Green Goblin is Norman Osborn, the CEO of Oscorp. He has Powers that derive from a "Goblin formula" that increase agility, endurance strength and reflexes to superhuman levels. The formula has also advances the intelligence but with a side effect of insanity. Has many weapons that Norman Osborn originally created. Such as glider to fly with and pumpkin bombs to throw.[36]'
   },
@@ -126,7 +126,7 @@ const villains: Villain[] = [
     name: 'Scorpion',
     alter_ego: 'Mac Gargan8',
     first_appearance: '#20 (January 1965)',
-    creator: 'Stan Lee[42], Steve Ditko[42]',
+    creator: 'Stan Lee, Steve Ditko',
     description:
       "A former private investigator. Endured a test that made him more powerful than Spider-Man but also insane. It gave him superhuman strength of a scorpion. He was then provided with a scorpion themed suit and weaponry (such as a tail which evolved from a simple club tail to a scythe-like spike capable of shooting lasers, acid among other projectiles). Gargan also gained power when switching to the Scorpion to being one of the characters known as Venom. See Venom's power and abilities below to see that power.[43][44]"
   },
