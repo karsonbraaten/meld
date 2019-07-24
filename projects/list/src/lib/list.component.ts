@@ -4,7 +4,8 @@ import {
   Input,
   ChangeDetectionStrategy,
   OnChanges,
-  SimpleChanges
+  SimpleChanges,
+  ChangeDetectorRef
 } from '@angular/core'
 import { SelectionModel } from '@angular/cdk/collections'
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout'
@@ -45,7 +46,10 @@ export class ListComponent<T> implements OnChanges, OnInit {
   dataSource = new MatTableDataSource<T>([])
   selectionModel = new SelectionModel<T>(true, [])
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private cdr: ChangeDetectorRef,
+    private breakpointObserver: BreakpointObserver
+  ) {}
 
   ngOnChanges({ items: { currentValue } }: SimpleChanges) {
     if (currentValue) {
@@ -75,12 +79,9 @@ export class ListComponent<T> implements OnChanges, OnInit {
     this.items.forEach(item => this.selectionModel.select(item))
   }
 
-  deselectAll() {
-    this.selectionModel.clear()
-  }
-
   clear() {
     this.selectionModel.clear()
+    this.cdr.detectChanges()
   }
 
   get allColumns(): string[] {
