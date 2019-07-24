@@ -33,6 +33,7 @@ export class VillainsComponent implements OnInit {
   displayWith(villain: Villain): ListItem {
     return {
       title: villain.name,
+      subtitle: villain.alter_ego,
       link: `${villain.id}`
     }
   }

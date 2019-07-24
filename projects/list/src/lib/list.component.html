@@ -9,7 +9,8 @@
                     (change)="onCheckboxChange($event)"
                     (click)="$event.stopPropagation()">
                 </mat-checkbox>
-                {{ li.title }}
+                <p matLine>{{ li.title }}</p>
+                <p *ngIf="li.subtitle" matLine>{{ li.subtitle }}</p>
             </a>
         </ng-container>
     </mat-nav-list>
