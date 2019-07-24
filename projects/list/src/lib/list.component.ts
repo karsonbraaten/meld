@@ -2,7 +2,6 @@ import {
   Component,
   OnInit,
   Input,
-  OnDestroy,
   ChangeDetectionStrategy,
   OnChanges,
   SimpleChanges
@@ -78,7 +77,8 @@ export class ListComponent<T> implements OnChanges, OnInit {
   }
 
   get allColumns(): string[] {
-    return ['select', ...this.columns]
+    const select = this.disableSelection ? [] : ['select']
+    return [...select, ...this.columns]
   }
 
   get selected(): T[] {
