@@ -32,17 +32,17 @@
                     </mat-checkbox>
                 </td>
             </ng-container>
-            <ng-container *ngFor="let column of columns; first as isFirst" [matColumnDef]="column">
+            <ng-container *ngFor="let column of allColumns; first as isFirst" [matColumnDef]="column">
                 <th mat-header-cell *matHeaderCellDef>{{ column | titlecase }}</th>
                 <td mat-cell *matCellDef="let item">
                     <a
                         *ngIf="isFirst; else plain"
                         [routerLink]="displayWith(item).link"
                         (click)="$event.stopPropagation()">
-                        {{ item[column] | titlecase }}
+                        {{ value(column, item) | titlecase }}
                     </a>
                     <ng-template #plain>
-                        {{ item[column] | titlecase }}
+                        {{ value(column, item) | titlecase }}
                     </ng-template>
                 </td>
             </ng-container>

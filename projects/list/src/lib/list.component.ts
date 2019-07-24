@@ -21,6 +21,13 @@ export interface ListItem {
 
 type ListView = 'list' | 'table'
 
+export interface ColumnTitle<T> {
+  title: string
+  key: Extract<keyof T, string>
+}
+
+export type Column<T> = Extract<keyof T, string> | ColumnTitle<T>
+
 @Component({
   providers: [BreakpointObserver],
   selector: 'ngx-list',
@@ -29,9 +36,9 @@ type ListView = 'list' | 'table'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent<T> implements OnChanges, OnInit {
-  @Input() disableSelection = false
+  @Input() disableSelection = true
   @Input() displayWith: (value: T) => ListItem
-  @Input() columns: (Extract<keyof T, string>)[] = [] // TODO: @Input() fields replace columns and items
+  @Input() columns: Column<T>[] = []
   @Input() items: T[]
 
   view$: Observable<ListView>
@@ -78,7 +85,18 @@ export class ListComponent<T> implements OnChanges, OnInit {
 
   get allColumns(): string[] {
     const select = this.disableSelection ? [] : ['select']
-    return [...select, ...this.columns]
+    const columns = this.columns.map(col => {
+      return typeof col === 'string' ? col : col.title
+    })
+    return [...select, ...columns]
+  }
+
+  value(column: string, item: T): string {
+    const titles = this.columns.filter(
+      (col): col is ColumnTitle<T> => typeof col !== 'string'
+    )
+    const title = titles.find(col => col.title === column)
+    return title ? item[title.key] : item[column]
   }
 
   get selected(): T[] {

@@ -2,8 +2,9 @@ import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
 import { Observable } from 'rxjs'
 
+import { ListItem, Column } from '@ngx-meld/list'
+
 import { Villain, VillainService } from '@entities/villain'
-import { ListItem } from '@ngx-meld/list'
 
 @Component({
   templateUrl: './villains.component.html',
@@ -12,6 +13,11 @@ import { ListItem } from '@ngx-meld/list'
 })
 export class VillainsComponent implements OnInit {
   villains$: Observable<Villain[]>
+
+  columns: Column<Villain>[] = [
+    'name',
+    { title: 'Alter Ego', key: 'alter_ego' }
+  ]
 
   constructor(
     private route: ActivatedRoute,
