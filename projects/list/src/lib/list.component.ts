@@ -37,7 +37,7 @@ export type Column<T> = Extract<keyof T, string> | ColumnTitle<T>
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ListComponent<T> implements OnChanges, OnInit {
-  @Input() disableSelection = false
+  @Input() selectable = false
   @Input() displayWith: (value: T) => ListItem
   @Input() columns: Column<T>[] = []
   @Input() items: T[]
@@ -85,7 +85,7 @@ export class ListComponent<T> implements OnChanges, OnInit {
   }
 
   get allColumns(): string[] {
-    const select = this.disableSelection ? [] : ['select']
+    const select = this.selectable ? ['select'] : []
     const columns = this.columns.map(col =>
       typeof col === 'string' ? col : col.title
     )
