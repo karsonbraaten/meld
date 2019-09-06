@@ -11,7 +11,7 @@
                 [value]="search.term"
                 (search)="onSearch($event)">
             </search-input>
-            <button mat-button *ngIf="search.showDone" (click)="onDone()">
+            <button mat-button *ngIf="search.showDone" (click)="onDone()" [color]="'primary'">
                 {{ search.doneText || "Done" }}
             </button>
         </mat-toolbar-row>
