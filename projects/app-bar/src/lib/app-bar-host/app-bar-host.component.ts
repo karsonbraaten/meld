@@ -70,6 +70,10 @@ export class AppBarHostComponent implements OnInit, OnDestroy {
     this.appBar.navigate('back')
   }
 
+  onDone() {
+    this.appBar.doneSearch()
+  }
+
   onSearch(term: string) {
     this.appBar.search(term)
   }

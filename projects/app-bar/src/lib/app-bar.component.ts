@@ -13,7 +13,8 @@ import {
   OnDestroy
 } from '@angular/core'
 import { CdkPortal, DomPortalHost, PortalHost } from '@angular/cdk/portal'
-import { Subscription } from 'rxjs'
+import { Subject } from 'rxjs'
+import { takeUntil } from 'rxjs/operators'
 
 import { AppBarService } from './app-bar.service'
 import { AppBarState, NavigationAction } from './model'
@@ -34,15 +35,19 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
 
   @Input() placeholder: string | null
   @Input() searchText: string | null
+  @Input() doneText: string | null
+  @Input() showDone: boolean = false
 
   @Output() dismiss = new EventEmitter<void>()
+  @Output() done = new EventEmitter<void>() // TODO: scrap this output in host
   @Output() searchExpand = new EventEmitter<void>()
   @Output() search = new EventEmitter<string>()
 
   @ViewChild(CdkPortal, { static: false }) portal: CdkPortal
 
   private portalHost: PortalHost
-  private subscription: Subscription
+
+  private destroy$ = new Subject<boolean>()
 
   constructor(
     private componentFactoryResolver: ComponentFactoryResolver,
@@ -54,7 +59,13 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
   ngOnInit() {
     const placeholder = this.placeholder
     if (placeholder) {
-      this.appBar.setSearch({ placeholder, expanded: true, term: '' })
+      this.appBar.setSearch({
+        placeholder,
+        expanded: true,
+        term: '',
+        doneText: this.doneText || 'Done',
+        showDone: this.showDone
+      })
     }
 
     const searchText = this.searchText
@@ -62,7 +73,9 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
       this.appBar.setSearch({
         term: searchText,
         expanded: true,
-        placeholder: this.placeholder || ''
+        placeholder: this.placeholder || '',
+        doneText: this.doneText || 'Done',
+        showDone: this.showDone
       })
     }
 
@@ -72,9 +85,13 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
 
     this.appBar.setShowFilter(this.filterIcon)
 
-    this.subscription = this.appBar.searchTerm$.subscribe(term =>
-      this.search.emit(term)
-    )
+    this.appBar.searchTerm$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(term => this.search.emit(term))
+
+    this.appBar.doneSearch$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(() => this.done.emit())
   }
 
   ngAfterViewInit(): void {
@@ -92,9 +109,8 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
     if (this.portalHost) {
       this.portalHost.detach()
     }
-    if (this.subscription) {
-      this.subscription.unsubscribe()
-    }
+    this.destroy$.next(true)
+    this.destroy$.complete()
   }
 
   onClose() {

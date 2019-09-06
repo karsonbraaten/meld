@@ -4,16 +4,27 @@ import { pluck, distinctUntilChanged } from 'rxjs/operators'
 
 import { Search, NavigationAction } from './model'
 
-const emptySearch: Search = { expanded: false, placeholder: '', term: '' }
+const emptySearch: Search = {
+  expanded: false,
+  placeholder: '',
+  term: '',
+  doneText: '',
+  showDone: false
+}
 
 @Injectable({
   providedIn: 'root'
 })
 export class AppBarService {
+  private doneSearchSubject = new Subject<void>()
   private filterSubject = new Subject<void>()
   private navigateSubject = new Subject<NavigationAction>()
   private searchBS = new BehaviorSubject<Search>(emptySearch)
   private showFilterSubject = new Subject<boolean>()
+
+  get doneSearch$(): Observable<void> {
+    return this.doneSearchSubject.asObservable()
+  }
 
   get filter$(): Observable<void> {
     return this.filterSubject.asObservable()
@@ -42,6 +53,10 @@ export class AppBarService {
 
   collapseSearch() {
     this.searchBS.next(emptySearch)
+  }
+
+  doneSearch() {
+    this.doneSearchSubject.next()
   }
 
   expandSearch() {

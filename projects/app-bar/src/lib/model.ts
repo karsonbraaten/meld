@@ -6,4 +6,6 @@ export interface Search {
   expanded: boolean
   placeholder: string
   term: string
+  doneText: string
+  showDone: boolean
 }
