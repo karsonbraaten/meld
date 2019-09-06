@@ -75,6 +75,10 @@ export class AppBarService {
     this.searchBS.next({ ...this.searchBS.value, term })
   }
 
+  setShowDone(showDone: boolean) {
+    this.searchBS.next({ ...this.searchBS.value, showDone })
+  }
+
   setSearch(search: Search) {
     this.searchBS.next(search)
   }

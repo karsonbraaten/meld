@@ -10,7 +10,8 @@ import {
   Output,
   EventEmitter,
   ChangeDetectionStrategy,
-  OnDestroy
+  OnDestroy,
+  SimpleChanges
 } from '@angular/core'
 import { CdkPortal, DomPortalHost, PortalHost } from '@angular/cdk/portal'
 import { Subject } from 'rxjs'
@@ -103,6 +104,10 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
     )
 
     this.portalHost.attach(this.portal)
+  }
+
+  ngOnChanges({ showDone: { currentValue } }: SimpleChanges): void {
+    this.appBar.setShowDone(currentValue)
   }
 
   ngOnDestroy(): void {

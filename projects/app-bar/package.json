@@ -1,6 +1,6 @@
 {
   "name": "@ngx-meld/app-bar",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Angular implementation of the Material Design App bar component.",
   "repository": {
     "type" : "git",
