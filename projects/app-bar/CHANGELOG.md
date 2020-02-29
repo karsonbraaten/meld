@@ -1,5 +1,9 @@
 # Changelog
 
+# 0.3.0
+
+- angular v9
+
 # 0.2.2
 
 - Done button is primary color
