@@ -6,7 +6,7 @@ import {
   OnDestroy
 } from '@angular/core'
 import { Router } from '@angular/router'
-import { MatSidenav } from '@angular/material'
+import { MatSidenav } from '@angular/material/sidenav';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
 import { Observable, BehaviorSubject, combineLatest, Subscription } from 'rxjs'
 import { map, tap } from 'rxjs/operators'

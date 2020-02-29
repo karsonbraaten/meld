@@ -8,7 +8,7 @@ import {
   ViewChild,
   ChangeDetectionStrategy
 } from '@angular/core'
-import { ThemePalette } from '@angular/material'
+import { ThemePalette } from '@angular/material/core';
 import { Observable, Subscription } from 'rxjs'
 
 import { SearchInputComponent } from '../search-input/search-input.component'

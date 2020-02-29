@@ -1,6 +1,6 @@
 import { Component, OnInit, ChangeDetectionStrategy } from '@angular/core'
 import { ActivatedRoute, Router } from '@angular/router'
-import { MatListOption } from '@angular/material'
+import { MatListOption } from '@angular/material/list';
 import { Observable } from 'rxjs'
 
 import { Villain, VillainService } from '@entities/villain'
