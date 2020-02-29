@@ -21,9 +21,9 @@ export class ScaffoldComponent implements AfterContentInit, OnDestroy {
   @Input() disableDrawer = false
   @Input() disableSideSheet = false
 
-  @ViewChild('drawer', { static: false }) drawer: MatSidenav
-  @ViewChild('modalSideSheet', { static: false }) modalSideSheet: MatSidenav
-  @ViewChild('standardSideSheet', { static: false })
+  @ViewChild('drawer') drawer: MatSidenav
+  @ViewChild('modalSideSheet') modalSideSheet: MatSidenav
+  @ViewChild('standardSideSheet')
   standardSideSheet: MatSidenav
 
   drawerOpen$: Observable<boolean>

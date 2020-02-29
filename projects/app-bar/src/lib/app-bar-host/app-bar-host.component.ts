@@ -29,7 +29,7 @@ export class AppBarHostComponent implements OnInit, OnDestroy {
   @Output() showFilter = new EventEmitter<boolean>()
   @Output() navigate = new EventEmitter<NavigationAction>()
 
-  @ViewChild('searchInput', { static: false }) set searchInput(
+  @ViewChild('searchInput') set searchInput(
     input: SearchInputComponent | null
   ) {
     if (!input) {
