@@ -8,7 +8,7 @@ import {
   ViewChild,
   ChangeDetectionStrategy
 } from '@angular/core'
-import { ThemePalette } from '@angular/material'
+import { ThemePalette } from '@angular/material/core';
 import { Observable, Subscription } from 'rxjs'
 
 import { SearchInputComponent } from '../search-input/search-input.component'
@@ -29,7 +29,7 @@ export class AppBarHostComponent implements OnInit, OnDestroy {
   @Output() showFilter = new EventEmitter<boolean>()
   @Output() navigate = new EventEmitter<NavigationAction>()
 
-  @ViewChild('searchInput', { static: false }) set searchInput(
+  @ViewChild('searchInput') set searchInput(
     input: SearchInputComponent | null
   ) {
     if (!input) {

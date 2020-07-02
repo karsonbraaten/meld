@@ -27,7 +27,7 @@ import { AuthService, User } from './auth.service'
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AppComponent implements OnInit {
-  @ViewChild('scaffold', { static: false })
+  @ViewChild('scaffold')
   set scaffoldRef(ref: ScaffoldComponent) {
     this.scaffold = ref
     this.onShowFilter(this.showFilter$.value)

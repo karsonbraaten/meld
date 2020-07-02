@@ -24,7 +24,7 @@ import { SideSheetStyle } from './model'
 export class SideSheetComponent implements AfterViewInit, OnDestroy {
   @Input() titleText: string
 
-  @ViewChild(CdkPortal, { static: false }) portal: CdkPortal
+  @ViewChild(CdkPortal) portal: CdkPortal
 
   private portalHost: PortalHost
   private subscription: Subscription

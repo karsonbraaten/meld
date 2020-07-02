@@ -6,7 +6,7 @@ import {
   OnDestroy
 } from '@angular/core'
 import { Router } from '@angular/router'
-import { MatSidenav } from '@angular/material'
+import { MatSidenav } from '@angular/material/sidenav';
 import { Breakpoints, BreakpointObserver } from '@angular/cdk/layout'
 import { Observable, BehaviorSubject, combineLatest, Subscription } from 'rxjs'
 import { map, tap } from 'rxjs/operators'
@@ -21,9 +21,9 @@ export class ScaffoldComponent implements AfterContentInit, OnDestroy {
   @Input() disableDrawer = false
   @Input() disableSideSheet = false
 
-  @ViewChild('drawer', { static: false }) drawer: MatSidenav
-  @ViewChild('modalSideSheet', { static: false }) modalSideSheet: MatSidenav
-  @ViewChild('standardSideSheet', { static: false })
+  @ViewChild('drawer') drawer: MatSidenav
+  @ViewChild('modalSideSheet') modalSideSheet: MatSidenav
+  @ViewChild('standardSideSheet')
   standardSideSheet: MatSidenav
 
   drawerOpen$: Observable<boolean>

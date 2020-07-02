@@ -44,7 +44,7 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
   @Output() searchExpand = new EventEmitter<void>()
   @Output() search = new EventEmitter<string>()
 
-  @ViewChild(CdkPortal, { static: false }) portal: CdkPortal
+  @ViewChild(CdkPortal) portal: CdkPortal
 
   private portalHost: PortalHost
 
@@ -106,8 +106,10 @@ export class AppBarComponent implements OnInit, AfterViewInit, OnDestroy {
     this.portalHost.attach(this.portal)
   }
 
-  ngOnChanges({ showDone: { currentValue } }: SimpleChanges): void {
-    this.appBar.setShowDone(currentValue)
+  ngOnChanges(changes: SimpleChanges): void {
+    if (changes.showDone) {
+      this.appBar.setShowDone(changes.showDone.currentValue)
+    }
   }
 
   ngOnDestroy(): void {

@@ -1,5 +1,9 @@
 # Changelog
 
+# 0.2.0
+
+- angular v9
+
 # 0.1.9
 
 - fix bug where drawer wouldn't always close (when over content) when navigating to new page
