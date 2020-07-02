@@ -1,39 +1,29 @@
+/*
+  This is a "Solution Style" tsconfig.json file, and is used by editors and TypeScript’s language server to improve development experience.
+  It is not intended to be used to perform a compilation.
+
+  To learn more about this file see: https://angular.io/config/solution-tsconfig.
+*/
 {
-  "compileOnSave": false,
-  "compilerOptions": {
-    "baseUrl": "./",
-    "outDir": "./dist/out-tsc",
-    "sourceMap": true,
-    "declaration": false,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "importHelpers": true,
-    "target": "es2015",
-    "typeRoots": [
-      "node_modules/@types"
-    ],
-    "lib": [
-      "es2018",
-      "dom"
-    ],
-    "paths": {
-      "@entities/*": [
-        "src/entities/*"
-      ],
-      "@ngx-meld/scaffold": [
-        "dist/scaffold"
-      ],
-      "@ngx-meld/scaffold/*": [
-        "dist/scaffold/*"
-      ],
-      "@ngx-meld/app-bar": [
-        "dist/app-bar"
-      ],
-      "@ngx-meld/app-bar/*": [
-        "dist/app-bar/*"
-      ]
+  "files": [],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/scaffold/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/scaffold/tsconfig.spec.json"
+    },
+    {
+      "path": "./projects/app-bar/tsconfig.lib.json"
+    },
+    {
+      "path": "./projects/app-bar/tsconfig.spec.json"
     }
-  }
+  ]
 }
