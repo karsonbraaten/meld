@@ -1,0 +1,39 @@
+{
+  "compileOnSave": false,
+  "compilerOptions": {
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "module": "es2020",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "importHelpers": true,
+    "target": "es2015",
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "paths": {
+      "@entities/*": [
+        "src/entities/*"
+      ],
+      "@ngx-meld/scaffold": [
+        "dist/scaffold"
+      ],
+      "@ngx-meld/scaffold/*": [
+        "dist/scaffold/*"
+      ],
+      "@ngx-meld/app-bar": [
+        "dist/app-bar"
+      ],
+      "@ngx-meld/app-bar/*": [
+        "dist/app-bar/*"
+      ]
+    }
+  }
+}
